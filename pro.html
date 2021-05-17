@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title id="title"></title>
+    <link rel="icon" href="./ressources/icons/favicon.png" />
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body id="body">
+    <header role="banner" class="header">
+      <div class="imgg">
+        <a href="index.html">
+          <img src="./ressources/icons/logo.png" alt="Fisheye Home page" tabindex="0"/>
+        </a>
+      </div>
+    </header>
+    <main role="main">
+      <section id="list" class="list" role="region"></section>
+      <section id="photos">
+        <div class="drop">
+          <p>Trier par</p>
+          <div class="custom-select-wrapper" >
+            <div class="custom-select" tabindex="0">
+              <div class="custom-select__trigger" >
+                <span id="trie">Popularité</span>
+                <a class="arrow"></a>
+              </div>
+              <div class="custom-options" >
+                <span class="borderTop"></span>
+                <span role="menuitem"class="custom-option selected" data-value="popularite"
+                  >Popularité</span
+                >
+                <span role="menuitem"class="custom-option" data-value="date">Date</span>
+                <span role="menuitem"class="custom-option" data-value="titre">Titre</span>
+                <span class="borderBot"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <ul class="lists-tof">
+
+        </ul>
+      </section>
+      <div class="list-ban-likeAndPrice" role="complementary">
+        <div class="lists-ban-likeAndPrice_like">
+          <span id="likePhotograph"></span>
+          <svg role="image"
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-heart-fill"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"
+            />
+          </svg>
+        </div>
+        <p
+          class="lists-ban-likeAndPrice_price"
+          id="lists-ban-likeAndPrice_price"
+        ></p>
+      </div>
+
+    </main>
+    <script src="./js/photographerBanner.js" type="module"></script>
+    <script src="./js/likes.js" type="module"></script>
+    <script src="./js/photographerWork.js" type="module"></script>
+    <script src="./js/filterMedias.js" type="module"></script>
+  </body>
+</html>
