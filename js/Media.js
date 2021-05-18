@@ -1,3 +1,4 @@
+
 export default class Media {
   constructor(data) {
       this.id = data.id;
@@ -19,7 +20,7 @@ export default class Media {
         return  `
         <div class="lists-tof-img" >
         <span class="id">${this.id}</span>
-          <button   tabindex="0"onclick="openModal()"  aria-label="Ouvrir ${this.title} en vue lightbox" role="image link">
+          <button   tabindex="0"  aria-label="Ouvrir ${this.title} en vue lightbox" role="image link">
           <img 
               src="./../ressources/sample-photos/${this.image}" 
               alt="${this.title}" 
@@ -39,8 +40,8 @@ export default class Media {
         return`
         <div class="lists-tof-vid" tabindex="-1">
         <span class="id">${this.id}</span>
-        <button   onclick="openModal()"  aria-label="Ouvrir ${this.title} en vue lightbox" role="image link">
-          <video  controls class="img" onclick="openModal()">
+        <button  aria-label="Ouvrir ${this.title} en vue lightbox" role="image link">
+          <video  controls class="img" >
               <source 
                 src="./../ressources/sample-photos/${this.video}"
                 type="video/mp4"
@@ -60,6 +61,38 @@ export default class Media {
         </div>
         `;
     }
+  }
+  get picturesOrVidLightbox() {
+    if (this.image !== undefined) {
+      return  `
+      <div>
+        <img 
+            src="./../ressources/sample-photos/${this.image}" 
+            alt="${this.title}" 
+            class="modalThumb-img-img"
+            
+        />
+        <p class="lists-tof-img_dscr__title" role="text">${this.title}</p>
+       
+      </div>
+      `;
+  } else {
+      return`
+      <div>
+        <video  controls class="modalThumb-img_vid" >
+            <source 
+              src="./../ressources/sample-photos/${this.video}"
+              type="video/mp4"
+              alt="${this.title}"
+            >
+            </source> 
+        </video>
+          <p class="lists-tof-vid_dscr__title" role="text">${this.title}</p>
+         
+      </div>
+      `;
+  }
+
   }
 };
 

@@ -1,17 +1,33 @@
+import lightbox from "./lightbox.js";
+import prev from "./lightbox.js";
+import  next from "./lightbox.js";
+
 import Media from "./Media.js";
 import getMedias from "./photographerWork.js";
 
 export async function trie() {
+
+  let img = document.getElementsByClassName('img');
   const trie = document.getElementById('trie');
   var cardWork = document.querySelector('.lists-tof');
   const {media} = await getMedias();
+  const prevel = document.querySelector('.prev');
+  const nextel = document.querySelector('.next');
+  let tab = [];
   if (trie.textContent == 'Popularité') {
       media.sort((a, b) => (a.likes > b.likes ? -1 : b.likes > a.likes ? 1 : 0));
       cardWork.innerHTML = "";
       media.forEach(mediaa => {
         if (mediaa.photographerId ==  window.location.search.substring(4)) {
           let mediaaa = new Media(mediaa);
+          tab.push(mediaaa);
           cardWork.innerHTML += mediaaa.picturesOrVid;
+          for (let i=0; i < img.length;i++) {
+            img[i].addEventListener('click', () => {
+              lightbox(i, tab);
+             
+            })
+          }
         }
       })
   }
@@ -21,7 +37,15 @@ export async function trie() {
       media.forEach(mediaa => {
         if (mediaa.photographerId ==  window.location.search.substring(4)) {
           let mediaaa = new Media(mediaa);
+          tab.push(mediaaa);
           cardWork.innerHTML += mediaaa.picturesOrVid;
+          for (let i=0; i < img.length;i++) {
+            img[i].addEventListener('click', () => {
+              lightbox(i, tab);
+
+            })
+          }
+         
         }
       })
   }
@@ -35,14 +59,17 @@ export async function trie() {
     media.forEach(mediaa => {
       if (mediaa.photographerId ==  window.location.search.substring(4)) {
         let mediaaa = new Media(mediaa);
+        tab.push(mediaaa);
         cardWork.innerHTML += mediaaa.picturesOrVid;
+        for (let i=0; i < img.length;i++) {
+          img[i].addEventListener('click', () => {
+            lightbox(i, tab);
+           
+          })
+          }
       }
     })
   }
-}
-
-function compare(a, b) {
-  return a - b;
 }
 
 function menuWrap() {
