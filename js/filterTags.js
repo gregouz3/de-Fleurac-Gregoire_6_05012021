@@ -1,5 +1,5 @@
+import getPhotographers from "./fetchJson.js";
 import Photographer from "./Photographer.js";
-import getPhotographers from "./index.js";
 
 async function displayCardsPhotographersTag() {
   const urlParams = new URLSearchParams(window.location.search);

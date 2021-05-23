@@ -779,7 +779,7 @@ body::-webkit-scrollbar {
     object-position: top;
   }
 }
-.lists-tof-img-id {
+.lists-tof-img .id {
   display: none;
 }
 .lists-tof-img_dscr {
@@ -838,7 +838,7 @@ body::-webkit-scrollbar {
     height: 320px;
   }
 }
-.lists-tof-vid-id {
+.lists-tof-vid .id {
   display: none;
 }
 .lists-tof-vid_dscr {

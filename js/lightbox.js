@@ -1,4 +1,4 @@
-import Media from "./Media.js";
+import MediaFactory from "./mediaFactory.js";
 
 function openModal() {
   if (document.getElementById('body'))
@@ -22,34 +22,65 @@ function closeModal() {
 export default function lightbox(i, tab) {
   openModal();
   console.log(tab[i])
-  let mediaBox = new Media(tab[i]);
   let img = document.querySelector('.modalThumb-img');
-  img.innerHTML = "";
-  img.innerHTML = mediaBox.picturesOrVidLightbox;
   const prevel = document.querySelector('.prev');
   const nextel = document.querySelector('.next');
+  img.innerHTML = "";
+
+  let mediaBox = new MediaFactory(tab[i]);
+  if (tab[i].image !== undefined) {
+    let mediaBoxx = mediaBox.createMedia('image');
+    img.innerHTML = mediaBoxx.pictureLightbox;
+  } else if (tab[i].video !== undefined) {
+    let mediaBoxx = mediaBox.createMedia('video');
+    img.innerHTML = mediaBoxx.videoLightbox;
+  }
   prevel.addEventListener('click', () => {
     img.innerHTML = "";
     if (i == 0) {
       i = tab.length - 1;
-      let mediaBoxPrev = new Media(tab[i]);
-      img.innerHTML = mediaBoxPrev.picturesOrVidLightbox;
+      let mediaBox = new MediaFactory(tab[i]);
+      if (tab[i].image !== undefined) {
+        let mediaBoxx = mediaBox.createMedia('image');
+        img.innerHTML = mediaBoxx.pictureLightbox;
+      } else if (tab[i].video !== undefined) {
+        let mediaBoxx = mediaBox.createMedia('video');
+        img.innerHTML = mediaBoxx.videoLightbox;
+      }
     } else {
       i = i - 1;
-      let mediaBoxPrev = new Media(tab[i]);
-      img.innerHTML = mediaBoxPrev.picturesOrVidLightbox;
+      let mediaBox = new MediaFactory(tab[i]);
+      if (tab[i].image !== undefined) {
+        let mediaBoxx = mediaBox.createMedia('image');
+        img.innerHTML = mediaBoxx.pictureLightbox;
+      } else if (tab[i].video !== undefined) {
+        let mediaBoxx = mediaBox.createMedia('video');
+        img.innerHTML = mediaBoxx.videoLightbox;
+      }
     }
   });
   nextel.addEventListener('click', () => {
     img.innerHTML = "";
     if (i == tab.length - 1) {
       i = 0;
-      let mediaBoxPrev = new Media(tab[i]);
-      img.innerHTML = mediaBoxPrev.picturesOrVidLightbox;
+      let mediaBox = new MediaFactory(tab[i]);
+      if (tab[i].image !== undefined) {
+        let mediaBoxx = mediaBox.createMedia('image');
+        img.innerHTML = mediaBoxx.pictureLightbox;
+      } else if (tab[i].video !== undefined) {
+        let mediaBoxx = mediaBox.createMedia('video');
+        img.innerHTML = mediaBoxx.videoLightbox;
+      }
     } else {
       i = i + 1;
-      let mediaBoxPrev = new Media(tab[i]);
-      img.innerHTML = mediaBoxPrev.picturesOrVidLightbox;
+      let mediaBox = new MediaFactory(tab[i]);
+      if (tab[i].image !== undefined) {
+        let mediaBoxx = mediaBox.createMedia('image');
+        img.innerHTML = mediaBoxx.pictureLightbox;
+      } else if (tab[i].video !== undefined) {
+        let mediaBoxx = mediaBox.createMedia('video');
+        img.innerHTML = mediaBoxx.videoLightbox;
+      }
     }
   });
 }

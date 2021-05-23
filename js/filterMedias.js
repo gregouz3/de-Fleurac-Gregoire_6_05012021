@@ -1,9 +1,8 @@
-import lightbox from "./lightbox.js";
-import prev from "./lightbox.js";
-import  next from "./lightbox.js";
+import lightbox  from "./lightbox.js";
+import likeMedias from "./likes.js";
 
-import Media from "./Media.js";
-import getMedias from "./photographerWork.js";
+import getMedias from "./fetchJson.js";
+import MediaFactory from "./mediaFactory.js";
 
 export async function trie() {
 
@@ -11,23 +10,31 @@ export async function trie() {
   const trie = document.getElementById('trie');
   var cardWork = document.querySelector('.lists-tof');
   const {media} = await getMedias();
-  const prevel = document.querySelector('.prev');
-  const nextel = document.querySelector('.next');
   let tab = [];
   if (trie.textContent == 'Popularité') {
       media.sort((a, b) => (a.likes > b.likes ? -1 : b.likes > a.likes ? 1 : 0));
       cardWork.innerHTML = "";
       media.forEach(mediaa => {
         if (mediaa.photographerId ==  window.location.search.substring(4)) {
-          let mediaaa = new Media(mediaa);
-          tab.push(mediaaa);
-          cardWork.innerHTML += mediaaa.picturesOrVid;
+          if (mediaa.image !== undefined) {
+            let mediaaa = new MediaFactory(mediaa);
+            let mediaaaa = mediaaa.createMedia('image');
+            tab.push(mediaaaa);
+            cardWork.innerHTML += mediaaaa.pictureCard;
+          } 
+          else if (mediaa.video !== undefined) {
+            let mediaaa = new MediaFactory(mediaa);
+            let mediaaaa = mediaaa.createMedia('video');
+            tab.push(mediaaaa);
+            cardWork.innerHTML += mediaaaa.videoCard;
+            console.log(mediaaaa)
+          }
           for (let i=0; i < img.length;i++) {
             img[i].addEventListener('click', () => {
               lightbox(i, tab);
-             
             })
           }
+         
         }
       })
   }
@@ -36,13 +43,23 @@ export async function trie() {
     cardWork.innerHTML = "";
       media.forEach(mediaa => {
         if (mediaa.photographerId ==  window.location.search.substring(4)) {
-          let mediaaa = new Media(mediaa);
-          tab.push(mediaaa);
-          cardWork.innerHTML += mediaaa.picturesOrVid;
+          if (mediaa.image !== undefined) {
+            let mediaaa = new MediaFactory(mediaa);
+            let mediaaaa = mediaaa.createMedia('image');
+            tab.push(mediaaaa);
+            cardWork.innerHTML += mediaaaa.pictureCard;
+           
+          } 
+          else if (mediaa.video !== undefined) {
+            let mediaaa = new MediaFactory(mediaa);
+            let mediaaaa = mediaaa.createMedia('video');
+            tab.push(mediaaaa);
+            cardWork.innerHTML += mediaaaa.videoCard;
+            console.log(mediaaaa)
+          }
           for (let i=0; i < img.length;i++) {
             img[i].addEventListener('click', () => {
               lightbox(i, tab);
-
             })
           }
          
@@ -58,18 +75,31 @@ export async function trie() {
     cardWork.innerHTML = "";
     media.forEach(mediaa => {
       if (mediaa.photographerId ==  window.location.search.substring(4)) {
-        let mediaaa = new Media(mediaa);
-        tab.push(mediaaa);
-        cardWork.innerHTML += mediaaa.picturesOrVid;
+        if (mediaa.image !== undefined) {
+          let mediaaa = new MediaFactory(mediaa);
+          let mediaaaa = mediaaa.createMedia('image');
+          tab.push(mediaaaa);
+          cardWork.innerHTML += mediaaaa.pictureCard;
+         
+        } 
+        else if (mediaa.video !== undefined) {
+          let mediaaa = new MediaFactory(mediaa);
+          let mediaaaa = mediaaa.createMedia('video');
+          tab.push(mediaaaa);
+          cardWork.innerHTML += mediaaaa.videoCard;
+          console.log(mediaaaa)
+        }
         for (let i=0; i < img.length;i++) {
           img[i].addEventListener('click', () => {
             lightbox(i, tab);
-           
           })
-          }
+        }
+       
       }
     })
+
   }
+
 }
 
 function menuWrap() {
@@ -100,6 +130,7 @@ function menuWrap() {
           '.custom-select__trigger span'
         ).textContent = this.textContent;
         trie();
+        likeMedias();
       }
     });
   }

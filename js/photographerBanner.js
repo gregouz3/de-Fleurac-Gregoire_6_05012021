@@ -1,5 +1,5 @@
-import Photographer from "./Photographer.js";
 import getPhotographers from "./index.js";
+import Photographer from "./Photographer.js";
 
 async function displayPhotographerBanner() {
   let id_pro = location.search.substring(4);

@@ -66,6 +66,7 @@ export default class Photographer {
       <input class="list-ban__modal"
              type="button"
              value="Contactez-moi"
+             onclick="displayModal()"
              id="modal" 
              role="button"
              aria-haspopup="dialog"
