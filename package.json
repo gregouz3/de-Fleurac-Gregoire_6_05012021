@@ -3,10 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "type":"module",
+  "type": "module",
   "scripts": {
     "sass": "sass --watch ./scss/main.scss:./css/style.css"
-
   },
   "author": "",
   "license": "ISC"
