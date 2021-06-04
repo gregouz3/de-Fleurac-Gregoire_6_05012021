@@ -137,7 +137,7 @@ body::-webkit-scrollbar {
   text-align: center;
   border-radius: 4px;
   position: fixed;
-  bottom: 30px;
+  bottom: 10px;
   right: 30px;
   transition: background-color .3s, 
     opacity .5s, visibility .5s;
@@ -422,8 +422,9 @@ h1 {
   right: 0;
   bottom: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
   display: flex;
-  padding: 2.4rem;
   -webkit-overflow-scrolling: touch;
   background-color: rgba(black, .75);
   transition: .2s;
@@ -431,30 +432,40 @@ h1 {
 
 // dialog box
 .c-dialog__box {
-  flex: 1;
   border-radius: 5px;
-  margin: 10vh 20vw;
+  margin:auto;
   background-color: #d3573c;
   -webkit-overflow-scrolling: touch;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   @include mobile-only {
-    margin: 5vh 10vw;
+    margin: auto;
+  max-width: 300px;
+
   }
+
   & h2, & h3 {
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: normal;
-    margin: 0.5rem 1rem ;
+    margin: 0 1rem ;
+    @include mobile-only() {
+      font-size: 1.7rem;
+    }
+  }
+  & h2 {
+    margin: 1rem 1.5rem 0 1rem;
   }
   & .closeee {
     display: inline-block;
-    position: absolute;
-    right: 25vw;
     border: none;
-    width: 40px;
-    height: 40px;
-    top: 16vh;
+    width: 50px;
+    height: 50px;
     opacity: 1;
     cursor: pointer;
     transform: scale(0.7);
+    background-color: $secondly;
   }
   & .closeee:before,
   & .closeee:after {
@@ -472,14 +483,12 @@ h1 {
     transform: rotate(-45deg);
   }
   & #thx {
-    height: auto;
     display: flex;
     flex-direction: column;
     line-height: 40px;
     & .formData {
       font-size: 1.2rem;
       margin: 0 1rem ;
-
       &--msg {
         display: flex;
         flex-direction: column;
@@ -490,6 +499,8 @@ h1 {
 
         & textarea {
           border-radius: 5px;
+        overflow: hidden;
+
           border: 0;
           resize: none;
           margin-bottom: 1rem;
@@ -509,7 +520,7 @@ h1 {
       border-radius: 5px;
       height: 50px;
       width: 150px;                
-      margin: 1.5rem 1rem ;
+      margin: 0 1rem 1rem;
 
       border: 0;
       cursor: pointer;
@@ -522,7 +533,9 @@ h1 {
   }
   
 }
-
+.head {
+  display: flex;
+}
 // hidden dialog
 .c-dialog[aria-hidden="true"] {
   visibility: hidden;
@@ -623,7 +636,7 @@ h1 {
     transform: scale(0.7);
   }
   & .closeee:before,
-  & .closeee:after {
+  & .closeee:after { 
     position: absolute;
     left: 15px;
     content: ' ';

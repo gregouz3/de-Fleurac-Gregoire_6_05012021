@@ -143,7 +143,7 @@ body::-webkit-scrollbar {
   text-align: center;
   border-radius: 4px;
   position: fixed;
-  bottom: 30px;
+  bottom: 10px;
   right: 30px;
   transition: background-color 0.3s, opacity 0.5s, visibility 0.5s;
   opacity: 0;
@@ -448,41 +448,52 @@ h1 {
   right: 0;
   bottom: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
   display: flex;
-  padding: 2.4rem;
   -webkit-overflow-scrolling: touch;
   background-color: rgba(0, 0, 0, 0.75);
   transition: 0.2s;
 }
 
 .c-dialog__box {
-  flex: 1;
   border-radius: 5px;
-  margin: 10vh 20vw;
+  margin: auto;
   background-color: #d3573c;
   -webkit-overflow-scrolling: touch;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 @media screen and (max-width: 599px) {
   .c-dialog__box {
-    margin: 5vh 10vw;
+    margin: auto;
+    max-width: 300px;
   }
 }
 .c-dialog__box h2, .c-dialog__box h3 {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: normal;
-  margin: 0.5rem 1rem;
+  margin: 0 1rem;
+}
+@media screen and (max-width: 599px) {
+  .c-dialog__box h2, .c-dialog__box h3 {
+    font-size: 1.7rem;
+  }
+}
+.c-dialog__box h2 {
+  margin: 1rem 1.5rem 0 1rem;
 }
 .c-dialog__box .closeee {
   display: inline-block;
-  position: absolute;
-  right: 25vw;
   border: none;
-  width: 40px;
-  height: 40px;
-  top: 16vh;
+  width: 50px;
+  height: 50px;
   opacity: 1;
   cursor: pointer;
   transform: scale(0.7);
+  background-color: #d3573c;
 }
 .c-dialog__box .closeee:before, .c-dialog__box .closeee:after {
   position: absolute;
@@ -499,7 +510,6 @@ h1 {
   transform: rotate(-45deg);
 }
 .c-dialog__box #thx {
-  height: auto;
   display: flex;
   flex-direction: column;
   line-height: 40px;
@@ -518,6 +528,7 @@ h1 {
 }
 .c-dialog__box #thx .formData--msg textarea {
   border-radius: 5px;
+  overflow: hidden;
   border: 0;
   resize: none;
   margin-bottom: 1rem;
@@ -534,7 +545,7 @@ h1 {
   border-radius: 5px;
   height: 50px;
   width: 150px;
-  margin: 1.5rem 1rem;
+  margin: 0 1rem 1rem;
   border: 0;
   cursor: pointer;
   text-align: center;
@@ -542,6 +553,10 @@ h1 {
 .c-dialog__box #thx .sendd:hover {
   background-color: black;
   transition: 0.3s all ease-in-out;
+}
+
+.head {
+  display: flex;
 }
 
 .c-dialog[aria-hidden=true] {

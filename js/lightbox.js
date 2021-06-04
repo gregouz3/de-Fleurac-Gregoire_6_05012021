@@ -2,8 +2,6 @@ import MediaFactory from "./mediaFactory.js";
 
 export default function lightbox(i, tab) {
   openModal();
-  prev(i, tab);
-  next(i, tab);
   let img = document.querySelector('.modalThumb-img');
   img.innerHTML = "";
   let mediaBox = new MediaFactory(tab[i]);
@@ -14,6 +12,8 @@ export default function lightbox(i, tab) {
     let mediaBoxx = mediaBox.createMedia('video');
     img.innerHTML = mediaBoxx.videoLightbox;
   }
+  prev(i, tab);
+  next(i, tab);
 }
 
 function prev(i, tab) {
