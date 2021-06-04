@@ -66,7 +66,6 @@ function displayWithSort(media) {
   media.forEach(mediaa => {
     let mediaaa = new MediaFactory(mediaa);
     like = mediaa.likes;
-    console.log(like)
     likeTotal += like;
     likePhotograph.textContent = likeTotal;
     localStorage.setItem('likesPhotograph', likeTotal);

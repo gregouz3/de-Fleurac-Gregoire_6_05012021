@@ -11,15 +11,25 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
   </head>
 
   <body id="body">
+    <button
+      class="upBtn"
+      id="upBtn"
+      type="button"
+      onclick="mainFunction()"
+      id="upBtn"
+    >
+      Passer au contenu
+    </button>
+    <a id="button" onclick="goTop()" aria-label="Revenir en  haut de la page"></a>
     <header role="banner" class="header">
-      <div class="imgg">
         <a href="index.html">
-          <img src="./ressources/icons/logo.png" alt="Fisheye Home page" tabindex="0"/>
+          <img src="./ressources/icons/logo.png" alt="Fisheye Home page"/>
         </a>
-      </div>
     </header>
     <main role="main">
       <section id="list" class="list" role="region"></section>
@@ -27,7 +37,7 @@
         <div class="drop">
           <p>Trier par</p>
           <div class="custom-select-wrapper" >
-            <div class="custom-select" tabindex="0">
+            <div class="custom-select">
               <div class="custom-select__trigger" >
                 <span id="trie">Popularité</span>
                 <a class="arrow"></a>
@@ -48,12 +58,78 @@
 
         </ul>
       </section>
-      <div class="bground" id="dialog" role="dialog"  aria-modal="true" aria-hidden="true" tabindex="-1"></div>
+      <div class="js-page">
+        <main class="js-document">
+          <button class="list-ban__modal" type="button" aria-haspopup="dialog" aria-controls="dialog">Contactez-moi</button>
+        </main> 
+        <div id="dialog" role="dialog" aria-labelledby="dialog-title" aria-describedby="dialog-desc" aria-modal="true" aria-hidden="true" tabindex="-1" class="c-dialog">
+          <div role="document" class="c-dialog__box">
+            <span  role="button" type="button" aria-label="Fermer" title="Fermer cette fenêtre modale" class="closeee"
+            data-dismiss="dialog"></span>
+            <h2 id="dialog-title">Contactez-moi</h2>
+            <h3 class="content__name"></h3>
+            <form
+            id="thx" 
+            name="contact"
+            method="GET"
+            role="form"
+          >
+            <div
+              class="formData">
+              <label for="first" >Prénom</label><br>
+              <input
+                class="text-control"
+                type="text"
+                id="first"
+                name="first"
+                required
+              />
+            </div>
+            <div
+              class="formData">
+              <label for="last">Nom</label><br>
+              <input
+                class="text-control"
+                type="text"
+                id="last"
+                name="last"
+                required
+                />
+            </div>
+            <div
+              class="formData">
+              <label for="email">E-mail</label><br>
+                <input
+                  class="text-control"
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                />
+            </div>
+            <div
+            class="formData--msg">
+              <label for="msg">Votre message</label>
+              <textarea name="msg" id="msg" cols="33" rows="5" >
+              </textarea>
+            </div>
+        
+            <button
+              class="sendd"
+              data-dismiss="dialog"
+              type="button"
+              onclick="send()">Envoyer</button>
+          </form>
+          </div>
+        </div>
+      </div>
+
 
       <div id="modalThumb" class="modalThumb"
-      
       >
-        <span id="close" class="close" aria-label="Fermer"></span>
+        <span id="close" class="close" aria-label="Fermer"
+        title="Fermer cette fenêtre modale"
+        data-dismiss="dialog" role="button"></span>
         <div class="modalThumb-img" id="lightBox"></div>
         <span class="prev">&#10094;</span>
         <span class="next">&#10095;</span>
@@ -84,9 +160,11 @@
 
     </main>
     <script src="./js/photographerBanner.js" type="module"></script>
+    <script src="./js/modalForm.js"></script>
     <script src="./js/filterMedias.js" type="module"></script>
     <script src="./js/lightbox.js" type="module"></script>
-    <script src="./js/modalForm.js"></script>
+    <script src="./js/scroll1.js" ></script>
+
 
   </body>
 </html>

@@ -31,7 +31,7 @@ html {
 }
 
 body {
-  height: 104vh;
+  height: 105vh;
   @include mobile-only {
     margin-bottom: 19vh;
   }
@@ -50,7 +50,7 @@ body::-webkit-scrollbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 40px 1rem;
+  margin: 40px 4rem;
   @include mobile-only {
     margin: 42px 0.5rem;
     flex-wrap: wrap;
@@ -59,11 +59,11 @@ body::-webkit-scrollbar {
   .imgg a {
     width: 110px;
     height: 40px;
-    margin-left: 3rem;
     display: block;
     @include mobile-only {
       width: 110px;
       height: 40px;
+
     }
     img {
       width: 110px;
@@ -128,6 +128,7 @@ body::-webkit-scrollbar {
     }
   }
 }
+
 #button {
   display: inline-block;
   background-color: $primary;
@@ -189,6 +190,20 @@ body::-webkit-scrollbar {
     left: 30vw;
   }
 }
+
+h1 {
+  color: $primary;
+  font-size: 1.2rem;
+  margin-right: 2rem;
+  white-space: nowrap;
+  @include mobile-only {
+    font-size: 1.1rem;
+    margin-right: 1rem;
+    position: absolute;
+    top: 48px;
+    right: 0.5rem;
+  }
+}
 // list  des photographes
 .block {
   width: 100%;
@@ -202,7 +217,7 @@ body::-webkit-scrollbar {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin: 1rem 1rem 3rem 1rem;
+    margin: 2rem 1rem 3rem 1rem;
     @include mobile-only {
       margin: 0 1rem 2rem 1rem;
     }
@@ -264,7 +279,6 @@ body::-webkit-scrollbar {
   margin-top: 2px;
 }
 .list {
-  margin-top: -20px;
   &-ban {
     height: 300px;
     background-color: #fafafa;
@@ -399,6 +413,120 @@ body::-webkit-scrollbar {
       }
     }
   }
+}
+// dialog overlay
+.c-dialog {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  padding: 2.4rem;
+  -webkit-overflow-scrolling: touch;
+  background-color: rgba(black, .75);
+  transition: .2s;
+}
+
+// dialog box
+.c-dialog__box {
+  flex: 1;
+  border-radius: 5px;
+  margin: 10vh 20vw;
+  background-color: #d3573c;
+  -webkit-overflow-scrolling: touch;
+  @include mobile-only {
+    margin: 5vh 10vw;
+  }
+  & h2, & h3 {
+    font-size: 3rem;
+    font-weight: normal;
+    margin: 0.5rem 1rem ;
+  }
+  & .closeee {
+    display: inline-block;
+    position: absolute;
+    right: 25vw;
+    border: none;
+    width: 40px;
+    height: 40px;
+    top: 16vh;
+    opacity: 1;
+    cursor: pointer;
+    transform: scale(0.7);
+  }
+  & .closeee:before,
+  & .closeee:after {
+    position: absolute;
+    left: 15px;
+    content: ' ';
+    height: 50px;
+    width: 5px;
+    background-color: white;
+  }
+  & .closeee:before {
+    transform: rotate(45deg);
+  }
+  & .closeee:after {
+    transform: rotate(-45deg);
+  }
+  & #thx {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    line-height: 40px;
+    & .formData {
+      font-size: 1.2rem;
+      margin: 0 1rem ;
+
+      &--msg {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+        user-select: none;
+         margin: 0 1rem ;
+
+        & textarea {
+          border-radius: 5px;
+          border: 0;
+          resize: none;
+          margin-bottom: 1rem;
+        }
+      }
+      & input {
+        width: 100%;
+        height: 50px;
+        border-radius: 5px;
+        
+        border: 0;
+      }
+    }
+    & .sendd {
+      color: white;
+      background-color: #901c1c;
+      border-radius: 5px;
+      height: 50px;
+      width: 150px;                
+      margin: 1.5rem 1rem ;
+
+      border: 0;
+      cursor: pointer;
+      text-align: center;
+      &:hover {
+        background-color: black;
+        transition: 0.3s all ease-in-out;
+      }
+    }
+  }
+  
+}
+
+// hidden dialog
+.c-dialog[aria-hidden="true"] {
+  visibility: hidden;
+  opacity: 0;
 }
 // Modal form
 @keyframes modalopen {

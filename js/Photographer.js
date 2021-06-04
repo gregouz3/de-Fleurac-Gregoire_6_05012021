@@ -42,7 +42,7 @@ export default class Photographer {
     return `
     <section class="list-ban">
       <div class="list-ban-info" tabindex="0">
-        <h1 class="list-ban-info__name" role="heading">
+        <h2 class="list-ban-info__name" role="heading">
         <span id="name">${this.name}</span>
         </h1>
         <p class="list-ban-info__location" role="text">
@@ -61,17 +61,10 @@ export default class Photographer {
             alt="" 
             tabindex="0"
             aria-label="${this.name}"
+         
           />
       </div>
-      <input class="list-ban__modal"
-             type="button"
-             value="Contactez-moi"
-             onclick="displayModal()"
-             id="modal" 
-             role="button"
-             aria-haspopup="dialog"
-             aria-controls="dialog"
-      >
+      
     </section>
     `;
   }

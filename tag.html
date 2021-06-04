@@ -8,9 +8,21 @@
   <link rel="icon" href="./ressources/icons/favicon.png" />
   <link rel="stylesheet" type="text/css" href="./css/style.css" />
   <link href="https://fonts.googleapis.com/css?family=Merriweather:400,900,900i" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  
 </head>
 <body>
+  <button
+      class="upBtn"
+      id="upBtn"
+      type="button"
+      onclick="mainFunction()"
+      id="upBtn"
+    >
+      Passer au contenu
+    </button>
+    <a id="button" onclick="goTop()" aria-label="Revenir en  haut de la page"></a>
   <header role="banner" class="header">
       <a href="./index.html">
         <img src="./ressources/icons/logo.png" alt="Fisheye Home page"/>
@@ -35,5 +47,7 @@
     <ul class="block" role="region" aria-labelledby=""></ul>
   </main>
   <script src="./js/filterTags.js" type="module"></script>
+  <script src="./js/scroll.js" ></script>
+
 </body>
 </html>

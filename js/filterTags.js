@@ -1,4 +1,4 @@
-import getPhotographers from "./fetchJson.js";
+import getPhotographers from "./index.js";
 import Photographer from "./Photographer.js";
 
 async function displayCardsPhotographersTag() {

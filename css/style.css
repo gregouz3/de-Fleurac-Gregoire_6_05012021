@@ -27,7 +27,7 @@ html {
 }
 
 body {
-  height: 104vh;
+  height: 105vh;
 }
 @media screen and (max-width: 599px) {
   body {
@@ -49,7 +49,7 @@ body::-webkit-scrollbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 40px 1rem;
+  margin: 40px 4rem;
 }
 @media screen and (max-width: 599px) {
   .header {
@@ -60,7 +60,6 @@ body::-webkit-scrollbar {
 .header .imgg a {
   width: 110px;
   height: 40px;
-  margin-left: 3rem;
   display: block;
 }
 @media screen and (max-width: 599px) {
@@ -205,6 +204,22 @@ body::-webkit-scrollbar {
   }
 }
 
+h1 {
+  color: #901c1c;
+  font-size: 1.2rem;
+  margin-right: 2rem;
+  white-space: nowrap;
+}
+@media screen and (max-width: 599px) {
+  h1 {
+    font-size: 1.1rem;
+    margin-right: 1rem;
+    position: absolute;
+    top: 48px;
+    right: 0.5rem;
+  }
+}
+
 .block {
   width: 100%;
   display: flex;
@@ -218,7 +233,7 @@ body::-webkit-scrollbar {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  margin: 1rem 1rem 3rem 1rem;
+  margin: 2rem 1rem 3rem 1rem;
 }
 @media screen and (max-width: 599px) {
   .block-list {
@@ -271,9 +286,6 @@ body::-webkit-scrollbar {
   margin-top: 2px;
 }
 
-.list {
-  margin-top: -20px;
-}
 .list-ban {
   height: 300px;
   background-color: #fafafa;
@@ -427,6 +439,114 @@ body::-webkit-scrollbar {
   .list-ban-likeAndPrice {
     margin: 0.1rem;
   }
+}
+
+.c-dialog {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  padding: 2.4rem;
+  -webkit-overflow-scrolling: touch;
+  background-color: rgba(0, 0, 0, 0.75);
+  transition: 0.2s;
+}
+
+.c-dialog__box {
+  flex: 1;
+  border-radius: 5px;
+  margin: 10vh 20vw;
+  background-color: #d3573c;
+  -webkit-overflow-scrolling: touch;
+}
+@media screen and (max-width: 599px) {
+  .c-dialog__box {
+    margin: 5vh 10vw;
+  }
+}
+.c-dialog__box h2, .c-dialog__box h3 {
+  font-size: 3rem;
+  font-weight: normal;
+  margin: 0.5rem 1rem;
+}
+.c-dialog__box .closeee {
+  display: inline-block;
+  position: absolute;
+  right: 25vw;
+  border: none;
+  width: 40px;
+  height: 40px;
+  top: 16vh;
+  opacity: 1;
+  cursor: pointer;
+  transform: scale(0.7);
+}
+.c-dialog__box .closeee:before, .c-dialog__box .closeee:after {
+  position: absolute;
+  left: 15px;
+  content: " ";
+  height: 50px;
+  width: 5px;
+  background-color: white;
+}
+.c-dialog__box .closeee:before {
+  transform: rotate(45deg);
+}
+.c-dialog__box .closeee:after {
+  transform: rotate(-45deg);
+}
+.c-dialog__box #thx {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  line-height: 40px;
+}
+.c-dialog__box #thx .formData {
+  font-size: 1.2rem;
+  margin: 0 1rem;
+}
+.c-dialog__box #thx .formData--msg {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  user-select: none;
+  margin: 0 1rem;
+}
+.c-dialog__box #thx .formData--msg textarea {
+  border-radius: 5px;
+  border: 0;
+  resize: none;
+  margin-bottom: 1rem;
+}
+.c-dialog__box #thx .formData input {
+  width: 100%;
+  height: 50px;
+  border-radius: 5px;
+  border: 0;
+}
+.c-dialog__box #thx .sendd {
+  color: white;
+  background-color: #901c1c;
+  border-radius: 5px;
+  height: 50px;
+  width: 150px;
+  margin: 1.5rem 1rem;
+  border: 0;
+  cursor: pointer;
+  text-align: center;
+}
+.c-dialog__box #thx .sendd:hover {
+  background-color: black;
+  transition: 0.3s all ease-in-out;
+}
+
+.c-dialog[aria-hidden=true] {
+  visibility: hidden;
+  opacity: 0;
 }
 
 @keyframes modalopen {
