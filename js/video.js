@@ -17,7 +17,8 @@ export default class Video {
     return`
         <div class="lists-tof-vid">
         <span class="id">${this.id}</span>
-          <video  controls class="img" aria-label="Ouvrir ${this.title} en vue lightbox">
+          <video                aria-haspopup="dialog" aria-controls="modalThumb" 
+          controls class="img" aria-label="Ouvrir ${this.title} en vue lightbox">
               <source 
                 src="./../ressources/sample-photos/${this.video}"
                 type="video/mp4"

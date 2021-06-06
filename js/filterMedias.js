@@ -79,10 +79,13 @@ function displayWithSort(media) {
       tab.push(mediaaaa);
       cardWork.innerHTML += mediaaaa.videoCard;
     }
-  for (let i=0; i < img.length;i++) {
+    for (let i=0; i < img.length;i++) {
       img[i].addEventListener('click', () => {
         lightbox(i, tab);
       })
+      
+     
+      
     }
     for (let i = 0; i < likes.length; i++) {
       likes[i].addEventListener('click', () => {

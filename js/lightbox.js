@@ -152,12 +152,7 @@ function Modal() {
     doc.setAttribute('aria-hidden', true);
   for(let i=0;i< triggerss.length;i++) {
   
-      triggerss[i].addEventListener('keydown', (event) => {
-        if (event.which === keys.enter) {
-          event.preventDefault();
-          openn(modal);
-        }  
-      });
+  
       closeBtn.addEventListener('click', (event) => {
         event.preventDefault();
         closee(modal);
