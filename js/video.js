@@ -15,10 +15,9 @@ export default class Video {
       this.likes = toff.likes;
     }
     return`
-        <div class="lists-tof-vid" tabindex="-1">
+        <div class="lists-tof-vid">
         <span class="id">${this.id}</span>
-        <div  aria-label="Ouvrir ${this.title} en vue lightbox" role="image link">
-          <video  controls class="img" >
+          <video  controls class="img" aria-label="Ouvrir ${this.title} en vue lightbox">
               <source 
                 src="./../ressources/sample-photos/${this.video}"
                 type="video/mp4"
@@ -26,7 +25,6 @@ export default class Video {
               >
               </source> 
           </video>
-          </div>   
           <div class="lists-tof-vid_dscr">
             <p class="lists-tof-vid_dscr__title" role="text">${this.title}</p>
             <div  class="lists-tof-vid_dscr__like">

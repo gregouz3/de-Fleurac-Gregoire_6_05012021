@@ -8,5 +8,8 @@
     "sass": "sass --watch ./scss/main.scss:./css/style.css"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "parvus": "^1.4.0"
+  }
 }

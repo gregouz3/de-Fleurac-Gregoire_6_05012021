@@ -177,6 +177,12 @@ body::-webkit-scrollbar {
   visibility: visible;
 }
 
+.btnn {
+  border: 0px;
+  width: 200px;
+  height: 200px;
+}
+
 #upBtn {
   height: 25px;
   width: 16vw;
@@ -441,6 +447,43 @@ h1 {
   }
 }
 
+.c-dialogg {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  -webkit-overflow-scrolling: touch;
+  background-color: rgba(0, 0, 0, 0.75);
+  transition: 0.2s;
+}
+
+#dialogg[aria-hidden=true] {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.c-dialogg__box {
+  border-radius: 5px;
+  margin: auto;
+  background-color: #d3573c;
+  -webkit-overflow-scrolling: touch;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+@media screen and (max-width: 599px) {
+  .c-dialogg__box {
+    margin: auto;
+    max-width: 300px;
+  }
+}
+
 .c-dialog {
   position: fixed;
   z-index: 100;
@@ -564,137 +607,146 @@ h1 {
   opacity: 0;
 }
 
-@keyframes modalopen {
-  from {
-    opacity: 0;
-    transform: translateY(-150px);
-  }
-  to {
-    opacity: 1;
-  }
-}
-.bground {
-  animation-name: modalopen;
-  animation-duration: var(--modal-duration);
-  display: none;
+.doc {
   position: fixed;
   z-index: 100;
-  width: 40vw;
-  border-radius: 5px;
-  top: 10vh;
-  left: 30vw;
-  background-color: #d3573c;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
   -webkit-overflow-scrolling: touch;
+  background-color: rgba(0, 0, 0, 0.75);
+  transition: 0.2s;
+}
+
+.modalThum[aria-hidden=true] {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.modalThum {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  -webkit-overflow-scrolling: touch;
+  background-color: rgba(0, 0, 0, 0.75);
+  transition: 0.2s;
+}
+.modalThum .modalThumb {
+  position: fixed;
+  z-index: 100;
+  width: 70vw;
+  height: 70vh;
+  left: 15vw;
+  top: 15vh;
+  border-radius: 5px;
+  background-color: white;
+  /* Position the "next button" to the right */
+  /* On hover, add a black background color with a little bit see-through */
 }
 @media screen and (max-width: 599px) {
-  .bground {
+  .modalThum .modalThumb {
     width: 98vw;
-    top: 13vh;
+    top: 10vh;
     left: 1vw;
     height: 74vh;
   }
 }
-.bground .content {
-  display: flex;
-  flex-direction: column;
-  margin: 0.5rem 1rem 1rem 1rem;
-}
-.bground .content h2, .bground .content h3 {
-  font-size: 3rem;
-  font-weight: normal;
+.modalThum .modalThumb .prev,
+.modalThum .modalThumb .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: #901c1c;
+  font-weight: bold;
+  font-size: 50px;
+  border-radius: 0 3px 3px 0;
 }
 @media screen and (max-width: 599px) {
-  .bground .content h2, .bground .content h3 {
-    font-size: 2rem;
+  .modalThum .modalThumb .prev,
+.modalThum .modalThumb .next {
+    padding: 0;
   }
 }
-.bground .content #thx {
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  line-height: 40px;
+.modalThum .modalThumb .next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
 }
-.bground .content #thx .formData {
-  font-size: 1.2rem;
-}
-.bground .content #thx .formData--msg {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 1rem;
-  font-size: 1.2rem;
-  user-select: none;
-}
-.bground .content #thx .formData--msg textarea {
-  border-radius: 5px;
-  border: 0;
-  resize: none;
-  margin-bottom: 1rem;
-}
-.bground .content #thx .formData input {
-  width: 100%;
-  height: 50px;
-  border-radius: 5px;
-  border: 0;
-}
-.bground .content #thx .sendd {
-  color: white;
-  background-color: #901c1c;
-  border-radius: 5px;
-  height: 50px;
-  width: 150px;
-  border: 0;
-  cursor: pointer;
-  text-align: center;
-}
-.bground .content #thx .sendd:hover {
-  background-color: black;
-  transition: 0.3s all ease-in-out;
-}
-.bground .closeee {
+.modalThum .modalThumb .close {
   display: inline-block;
-  position: absolute;
-  right: 0.5rem;
-  top: 1rem;
   width: 50px;
   height: 50px;
   opacity: 1;
+  position: absolute;
+  top: -5px;
+  right: -8px;
   cursor: pointer;
   transform: scale(0.7);
 }
-.bground .closeee:before, .bground .closeee:after {
-  position: absolute;
-  left: 15px;
+.modalThum .modalThumb .close:before,
+.modalThum .modalThumb .close:after {
   content: " ";
   height: 50px;
   width: 5px;
-  background-color: white;
+  background-color: #901c1c;
 }
-.bground .closeee:before {
+.modalThum .modalThumb .close:before {
   transform: rotate(45deg);
 }
-.bground .closeee:after {
+.modalThum .modalThumb .close:after {
   transform: rotate(-45deg);
+}
+.modalThum .modalThumb-img-img {
+  width: 60vw;
+  margin: 5vh 5vw 0 5vw;
+  height: 60vh;
+  object-fit: cover;
+  border-radius: 5px;
+}
+@media screen and (max-width: 599px) {
+  .modalThum .modalThumb-img-img {
+    width: 80vw;
+    margin: 5vh 10vw 2vh 9vw;
+  }
+}
+.modalThum .modalThumb-img_vid {
+  width: 60vw;
+  height: 60vh;
+  margin: 5vh 5vw 0 5vw;
+  object-fit: cover;
+  border-radius: 5px;
+}
+@media screen and (max-width: 599px) {
+  .modalThum .modalThumb-img_vid {
+    width: 80vw;
+    margin: 5vh 10vw 2vh 9vw;
+  }
+}
+.modalThum .modalThumb-img__title {
+  color: #901c1c;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-left: 5vw;
+}
+@media screen and (max-width: 599px) {
+  .modalThum .modalThumb-img__title {
+    margin-left: 9vw;
+  }
 }
 
 .content[aria-hidden=true] {
   visibility: hidden;
   opacity: 0;
-}
-
-#body--modal {
-  height: 100%;
-  width: 100%;
-  position: relative;
-}
-
-#body--modal::before {
-  content: "";
-  background: rgba(0, 0, 0, 0.7);
-  position: absolute;
-  top: -50px;
-  right: 0px;
-  bottom: -150px;
-  left: 0px;
 }
 
 .close {
@@ -1009,115 +1061,6 @@ h1 {
   color: #901c1c;
   white-space: nowrap;
   margin: auto 10px auto;
-}
-
-.modalThumb {
-  display: none;
-  position: fixed;
-  z-index: 2;
-  width: 70vw;
-  height: 70vh;
-  left: 15vw;
-  top: 15vh;
-  border-radius: 5px;
-  background-color: white;
-  animation-name: modalopen;
-  animation-duration: var(--modal-duration);
-  /* Next & previous buttons */
-  /* Position the "next button" to the right */
-  /* On hover, add a black background color with a little bit see-through */
-}
-@media screen and (max-width: 599px) {
-  .modalThumb {
-    width: 98vw;
-    top: 10vh;
-    left: 1vw;
-    height: 74vh;
-  }
-}
-.modalThumb .prev,
-.modalThumb .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  padding: 16px;
-  margin-top: -50px;
-  color: #901c1c;
-  font-weight: bold;
-  font-size: 50px;
-  border-radius: 0 3px 3px 0;
-}
-@media screen and (max-width: 599px) {
-  .modalThumb .prev,
-.modalThumb .next {
-    padding: 0;
-  }
-}
-.modalThumb .next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-.modalThumb .close {
-  display: inline-block;
-  width: 50px;
-  height: 50px;
-  opacity: 1;
-  position: absolute;
-  top: -5px;
-  right: -8px;
-  cursor: pointer;
-  transform: scale(0.7);
-}
-.modalThumb .close:before,
-.modalThumb .close:after {
-  content: " ";
-  height: 50px;
-  width: 5px;
-  background-color: #901c1c;
-}
-.modalThumb .close:before {
-  transform: rotate(45deg);
-}
-.modalThumb .close:after {
-  transform: rotate(-45deg);
-}
-.modalThumb-img-img {
-  width: 60vw;
-  height: 60vh;
-  margin: 5vh 5vw 0 5vw;
-  object-fit: cover;
-  border-radius: 5px;
-}
-@media screen and (max-width: 599px) {
-  .modalThumb-img-img {
-    width: 80vw;
-    margin: 5vh 10vw 2vh 9vw;
-  }
-}
-.modalThumb-img_vid {
-  width: 60vw;
-  height: 60vh;
-  margin: 5vh 5vw 0 5vw;
-  object-fit: cover;
-  border-radius: 5px;
-}
-@media screen and (max-width: 599px) {
-  .modalThumb-img_vid {
-    width: 80vw;
-    margin: 5vh 10vw 2vh 9vw;
-  }
-}
-.modalThumb-img__title {
-  color: #901c1c;
-  font-size: 1.1rem;
-  font-weight: bold;
-  margin-left: 5vw;
-}
-@media screen and (max-width: 599px) {
-  .modalThumb-img__title {
-    margin-left: 9vw;
-  }
 }
 
 /*# sourceMappingURL=style.css.map */
