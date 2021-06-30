@@ -22,10 +22,6 @@ html {
   caret-color: #d3573c;
 }
 
-*:focus {
-  outline: none !important;
-}
-
 body {
   height: 105vh;
 }

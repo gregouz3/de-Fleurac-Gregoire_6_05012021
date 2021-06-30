@@ -1,13 +1,13 @@
 export default class Photographer {
   constructor(data) {
-      this.name = data.name;
-      this.id = data.id;
-      this.city = data.city;
-      this.country = data.country;
-      this.tags = data.tags;
-      this.tagline = data.tagline;
-      this.price = data.price;
-      this.portrait = data.portrait;
+    this.name = data.name;
+    this.id = data.id;
+    this.city = data.city;
+    this.country = data.country;
+    this.tags = data.tags;
+    this.tagline = data.tagline;
+    this.price = data.price;
+    this.portrait = data.portrait;
   }
 
   get photographerCard() {
@@ -36,7 +36,7 @@ export default class Photographer {
       </div>
       <div class=" block-list__tag" id="tags${this.id}">
       </div>
-    </li>`
+    </li>`;
   }
   get photographerBanner() {
     return `
@@ -54,13 +54,16 @@ export default class Photographer {
         <ul class="list-ban-info__tag" id="tags${this.id}">
         </ul>
       </div>
+    <div class="bbtn">
+          <button class="list-ban__modal" tabindex="0" role="button"  aria-haspopup="dialog" aria-controls="dialog" >Contactez-moi</button>
+        </div>
       <div class="list-ban-img" role="image">
           <img 
             src="ressources/sample-photos/PhotographersID_Photos/${this.portrait}" 
             width=200
             alt="" 
-            tabindex="0"
             aria-label="${this.name}"
+            tabindex="0"
          
           />
       </div>
@@ -68,4 +71,4 @@ export default class Photographer {
     </section>
     `;
   }
-};
+}

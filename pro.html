@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title id="title"></title>
+    <title id="title">FishEy</title>
     <link rel="icon" href="./ressources/icons/favicon.png" />
     <link rel="stylesheet" type="text/css" href="./css/style.css" />
     <link
@@ -35,21 +35,21 @@
     <main role="main">
       <section id="list" class="list" role="region"></section>
       <section id="photos">
-        <div class="drop">
+        <div class="drop" id="drop" aria-labelledby="trie" >
           <p>Trier par</p>
           <div class="custom-select-wrapper" >
             <div class="custom-select">
-              <div class="custom-select__trigger" >
+              <div class="custom-select__trigger" role="button" tabindex="0" aria-label="Order by">
                 <span id="trie">Popularité</span>
                 <a class="arrow"></a>
               </div>
-              <div class="custom-options" >
+              <div class="custom-options" aria-hidden="true">
                 <span class="borderTop"></span>
                 <span role="menuitem"class="custom-option selected" data-value="popularite"
                   >Popularité</span
                 >
-                <span role="menuitem"class="custom-option" data-value="date">Date</span>
-                <span role="menuitem"class="custom-option" data-value="titre">Titre</span>
+                <span  tabindex="0" role="menuitem"class="custom-option" data-value="date">Date</span>
+                <span tabindex="0"  role="menuitem"class="custom-option" data-value="titre">Titre</span>
                 <span class="borderBot"></span>
               </div>
             </div>
@@ -59,10 +59,10 @@
 
         </ul>
       </section>
+      <main class="js-document">
+        </main>
       <div class="js-page">
-        <main class="js-document">
-          <button class="list-ban__modal" type="button" aria-haspopup="dialog" aria-controls="dialog">Contactez-moi</button>
-        </main> 
+          <button class="list-ban__modal" tabindex="0" role="button"  aria-haspopup="dialog" aria-controls="dialog" >Contactez-moi</button>
         <div id="dialog" role="dialog" aria-labelledby="dialog-title" aria-describedby="dialog-desc" aria-modal="true" aria-hidden="true" tabindex="-1" class="c-dialog">
           <div role="document" class="c-dialog__box">
          
@@ -70,7 +70,7 @@
             <div class="head">
             <h2 id="dialog-title">Contactez-moi</h2>
             
-            <button  role="button" type="button" aria-label="Fermer" title="Fermer cette fenêtre modale" class="closeee"
+            <button  role="button"  aria-label="Fermer" title="Fermer cette fenêtre modale" class="closeee"
             data-dismiss="dialog"></button>
             </div>
             <h3 class="content__name"></h3>
@@ -140,11 +140,11 @@
       aria-labelledby="modalThumb-title">
       <div role="document" class="modalThumb">
         <span id="close" class="close" aria-label="Fermer"
-        title="Fermer cette fenêtre modale"
+        title="Fermer cette fenêtre modale" tabindex="0"
         data-dismiss="modalThum" role="button"></span>
         <div class="modalThumb-img" id="lightBox"></div>
-        <span class="prev">&#10094;</span>
-        <span class="next">&#10095;</span>
+        <span class="prev" tabindex="0">&#10094;</span>
+        <span class="next" tabindex="0">&#10095;</span>
       </div>
    
  
@@ -172,13 +172,10 @@
         ></p>
       </div>
     </main>
-    <script src="./js/photographerBanner.js" type="module"></script>
     <script src="./js/modalForm.js"></script>
     <script src="./js/filterMedias.js" type="module"></script>
     <script src="./js/scroll1.js" ></script>
     <script src="./js/lightbox.js" type="module"></script>
-
-
-
+    <script src="./js/photographerBanner.js" type="module"></script>
   </body>
 </html>

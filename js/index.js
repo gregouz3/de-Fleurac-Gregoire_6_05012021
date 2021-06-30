@@ -12,6 +12,7 @@ async function displayCardPhotographer() {
   if (card !== null) {
     card.innerHTML ='';
     photographers.forEach(photographer => {
+      
       let photograph = new Photographer(photographer);
       card.innerHTML += photograph.photographerCard;
       let id = photograph.id;
@@ -25,5 +26,6 @@ async function displayCardPhotographer() {
     })
   }
 }
+
 
 displayCardPhotographer();

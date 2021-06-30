@@ -5,7 +5,7 @@ async function displayCardsPhotographersTag() {
   const urlParams = new URLSearchParams(window.location.search);
   const tag = urlParams.get('tag');
   const {photographers} = await getPhotographers();
-  var card = document.querySelector('.block');
+  let card = document.querySelector('.block');
   card.innerHTML = '';
   photographers.forEach(photographer => {
     if (photographer.tags.includes(tag)) {
