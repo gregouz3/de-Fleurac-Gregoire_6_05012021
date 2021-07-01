@@ -3,9 +3,7 @@ import Photographer from './Photographer.js';
 export default async function getPhotographers() {
   let url =
     'https://gregouz3.github.io/de-Fleurac-Gregoire_6_05012021/photographers.json';
-  return await fetch(url, {mode: 'no-cors'}).then((response) =>
-    response.json()
-  );
+  return await fetch(url).then((response) => response.json());
 }
 
 async function displayCardPhotographer() {

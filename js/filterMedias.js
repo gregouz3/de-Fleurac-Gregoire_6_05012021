@@ -4,9 +4,7 @@ import lightbox from './lightbox.js';
 async function getMedias() {
   let url =
     'https://gregouz3.github.io/de-Fleurac-Gregoire_6_05012021/medias.json';
-  return await fetch(url, {mode: 'no-cors'}).then((response) =>
-    response.json()
-  );
+  return await fetch(url).then((response) => response.json());
 }
 
 async function trie() {
