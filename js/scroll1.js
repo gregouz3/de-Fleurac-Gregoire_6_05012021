@@ -25,10 +25,10 @@ function goTop() {
 }
 
 function mainFunction() {
+  //scrool en dessous de la banniere
   let headH = parseInt(document.querySelector('.header').clientHeight) + 80;
   let banH = parseInt(document.querySelector('.list-ban').clientHeight);
   let Ht = banH + headH;
-  console.log(Ht);
   document.body.scrollTop = Ht; // For Safari
   document.documentElement.scrollTop = Ht; // For Chrome,
 }

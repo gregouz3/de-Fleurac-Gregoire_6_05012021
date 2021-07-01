@@ -1,9 +1,9 @@
 const triggers = document.querySelectorAll('[aria-haspopup="dialog"]');
-const doc = document.querySelector(".js-document");
+const doc = document.querySelector('.js-document');
 const focusableElementsArray = [
-  "button:not([disabled])",
-  "input:not([disabled])",
-  "textarea:not([disabled])",
+  'button:not([disabled])',
+  'input:not([disabled])',
+  'textarea:not([disabled])',
 ];
 
 const keyCodes = {
@@ -12,15 +12,14 @@ const keyCodes = {
   escape: 27,
 };
 const open = function (dialog) {
-  document.querySelector(".content__name").textContent =
-    document.getElementById("name").textContent;
+  document.querySelector('.content__name').textContent =
+    document.getElementById('name').textContent;
   const focusableElements = dialog.querySelectorAll(focusableElementsArray);
-  console.log(focusableElements);
   const firstFocusableElement = focusableElements[0];
   const lastFocusableElement = focusableElements[focusableElements.length - 1];
 
-  dialog.setAttribute("aria-hidden", false);
-  doc.setAttribute("aria-hidden", true);
+  dialog.setAttribute('aria-hidden', false);
+  doc.setAttribute('aria-hidden', true);
   // return if no focusable element
   if (!firstFocusableElement) {
     return;
@@ -30,7 +29,7 @@ const open = function (dialog) {
     // trapping focus inside the dialog
     focusableElements.forEach((focusableElement) => {
       if (focusableElement.addEventListener) {
-        focusableElement.addEventListener("keydown", (event) => {
+        focusableElement.addEventListener('keydown', (event) => {
           const tab = event.which === keyCodes.tab;
           if (!tab) {
             return;
@@ -52,34 +51,36 @@ const open = function (dialog) {
   }, 100);
 };
 
+//ouverture de la modol avec "enter"
 window.setTimeout(() => {
   document
-    .querySelector(".list-ban__modal")
-    .addEventListener("keydown", (event) => {
+    .querySelector('.list-ban__modal')
+    .addEventListener('keydown', (event) => {
       if (event.which === 13) {
         event.preventDefault();
         open(dialog);
       }
     });
 }, 100);
-const close = function (dialog, trigger) {
-  dialog.setAttribute("aria-hidden", true);
-  doc.setAttribute("aria-hidden", false);
+
+const close = function (dialog) {
+  dialog.setAttribute('aria-hidden', true);
+  doc.setAttribute('aria-hidden', false);
   // restoring focus
-  trigger.focus();
+  document.querySelector('.list-ban__modal').focus();
 };
 
 triggers.forEach((trigger) => {
-  const dialog = document.getElementById(trigger.getAttribute("aria-controls"));
-  const dismissTriggers = dialog.querySelectorAll("[data-dismiss]");
+  const dialog = document.getElementById(trigger.getAttribute('aria-controls'));
+  const dismissTriggers = dialog.querySelectorAll('[data-dismiss]');
 
-  trigger.addEventListener("click", (event) => {
-    console.log("click");
+  trigger.addEventListener('click', (event) => {
+    console.log('click');
     open(dialog);
   });
 
   // close dialog
-  dialog.addEventListener("keydown", (event) => {
+  dialog.addEventListener('keydown', (event) => {
     if (event.which === keyCodes.escape) {
       close(dialog, trigger);
     }
@@ -90,13 +91,13 @@ triggers.forEach((trigger) => {
       dismissTrigger.dataset.dismiss
     );
 
-    dismissTrigger.addEventListener("click", (event) => {
+    dismissTrigger.addEventListener('click', (event) => {
       event.preventDefault();
 
-      close(dismissDialog, trigger);
+      close(dismissDialog);
     });
   });
-  window.addEventListener("click", (event) => {
+  window.addEventListener('click', (event) => {
     if (event.target === dialog) {
       close(dialog, trigger);
     }
@@ -105,8 +106,8 @@ triggers.forEach((trigger) => {
 
 function send() {
   const form = document.contact;
-  const email = document.getElementById("email").value;
-  if (form.first.value !== "" && form.last.value !== "" && checkEmail(email)) {
+  const email = document.getElementById('email').value;
+  if (form.first.value !== '' && form.last.value !== '' && checkEmail(email)) {
     const User = {
       prenom: form.first.value,
       Nom: form.last.value,
@@ -114,13 +115,13 @@ function send() {
       Message: form.msg.value,
     };
     console.log(User);
-    const pro = document.getElementById("name").textContent;
+    const pro = document.getElementById('name').textContent;
     alert(
-      "Merci " + User.prenom + ", " + pro + " a bien re\u00e7u votre message."
+      'Merci ' + User.prenom + ', ' + pro + ' a bien re\u00e7u votre message.'
     );
     window.location.reload();
   } else {
-    alert("formulaire incorrects");
+    alert('formulaire incorrects');
   }
 }
 // f test address mail input with REGEX.

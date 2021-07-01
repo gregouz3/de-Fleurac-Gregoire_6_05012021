@@ -8,6 +8,7 @@ export default class Video {
     this.likes = data.likes;
     this.date = data.date;
     this.price = data.price;
+    this.alt = data.alt;
   }
   get videoCard() {
     if (localStorage.getItem('media_' + this.id)) {
@@ -22,7 +23,7 @@ export default class Video {
               <source 
                 src="ressources/sample-photos/${this.video}"
                 type="video/mp4"
-                alt="${this.title}"
+                alt="${this.alt}"
               >
               </source> 
           </video>
@@ -44,7 +45,7 @@ export default class Video {
             <source 
               src="ressources/sample-photos/${this.video}"
               type="video/mp4"
-              alt="${this.title}"
+              alt="${this.alt}"
             >
             </source> 
         </video>

@@ -1,122 +1,120 @@
-import MediaFactory from "./mediaFactory.js";
+import MediaFactory from './mediaFactory.js';
 
 export default function lightbox(i, tab) {
   Modal();
-  let img = document.querySelector(".modalThumb-img");
-  img.innerHTML = "";
+  let img = document.querySelector('.modalThumb-img');
+  img.innerHTML = '';
   let mediaBox = new MediaFactory(tab[i]);
   if (tab[i].image !== undefined) {
-    let mediaBoxx = mediaBox.createMedia("image");
+    let mediaBoxx = mediaBox.createMedia('image');
     img.innerHTML = mediaBoxx.pictureLightbox;
   } else if (tab[i].video !== undefined) {
-    let mediaBoxx = mediaBox.createMedia("video");
+    let mediaBoxx = mediaBox.createMedia('video');
     img.innerHTML = mediaBoxx.videoLightbox;
   }
   prevNext(i, tab);
-  // prevkey(i, tab);
-  // nextkey(i, tab);
 }
 
 function prevNext(i, tab) {
-  let img = document.querySelector(".modalThumb-img");
-  const prevel = document.querySelector(".prev");
-  prevel.addEventListener("keydown", (event) => {
+  let img = document.querySelector('.modalThumb-img');
+  const prevel = document.querySelector('.prev');
+  prevel.addEventListener('keydown', (event) => {
     if (event.which === keyCodes.enter) {
-      img.innerHTML = "";
+      img.innerHTML = '';
       if (i == 0) {
         i = tab.length - 1;
         let mediaBox = new MediaFactory(tab[i]);
         if (tab[i].image !== undefined) {
-          let mediaBoxx = mediaBox.createMedia("image");
+          let mediaBoxx = mediaBox.createMedia('image');
           img.innerHTML = mediaBoxx.pictureLightbox;
         } else if (tab[i].video !== undefined) {
-          let mediaBoxx = mediaBox.createMedia("video");
+          let mediaBoxx = mediaBox.createMedia('video');
           img.innerHTML = mediaBoxx.videoLightbox;
         }
       } else {
         i = i - 1;
         let mediaBox = new MediaFactory(tab[i]);
         if (tab[i].image !== undefined) {
-          let mediaBoxx = mediaBox.createMedia("image");
+          let mediaBoxx = mediaBox.createMedia('image');
           img.innerHTML = mediaBoxx.pictureLightbox;
         } else if (tab[i].video !== undefined) {
-          let mediaBoxx = mediaBox.createMedia("video");
+          let mediaBoxx = mediaBox.createMedia('video');
           img.innerHTML = mediaBoxx.videoLightbox;
         }
       }
     }
   });
-  prevel.addEventListener("click", () => {
-    img.innerHTML = "";
+  prevel.addEventListener('click', () => {
+    img.innerHTML = '';
     if (i == 0) {
       i = tab.length - 1;
       let mediaBox = new MediaFactory(tab[i]);
       if (tab[i].image !== undefined) {
-        let mediaBoxx = mediaBox.createMedia("image");
+        let mediaBoxx = mediaBox.createMedia('image');
         img.innerHTML = mediaBoxx.pictureLightbox;
       } else if (tab[i].video !== undefined) {
-        let mediaBoxx = mediaBox.createMedia("video");
+        let mediaBoxx = mediaBox.createMedia('video');
         img.innerHTML = mediaBoxx.videoLightbox;
       }
     } else {
       i = i - 1;
       let mediaBox = new MediaFactory(tab[i]);
       if (tab[i].image !== undefined) {
-        let mediaBoxx = mediaBox.createMedia("image");
+        let mediaBoxx = mediaBox.createMedia('image');
         img.innerHTML = mediaBoxx.pictureLightbox;
       } else if (tab[i].video !== undefined) {
-        let mediaBoxx = mediaBox.createMedia("video");
+        let mediaBoxx = mediaBox.createMedia('video');
         img.innerHTML = mediaBoxx.videoLightbox;
       }
     }
   });
 
-  const nextel = document.querySelector(".next");
-  nextel.addEventListener("click", () => {
-    img.innerHTML = "";
+  const nextel = document.querySelector('.next');
+  nextel.addEventListener('click', () => {
+    img.innerHTML = '';
     if (i == tab.length - 1) {
       i = 0;
       let mediaBox = new MediaFactory(tab[i]);
       if (tab[i].image !== undefined) {
-        let mediaBoxx = mediaBox.createMedia("image");
+        let mediaBoxx = mediaBox.createMedia('image');
         img.innerHTML = mediaBoxx.pictureLightbox;
       } else if (tab[i].video !== undefined) {
-        let mediaBoxx = mediaBox.createMedia("video");
+        let mediaBoxx = mediaBox.createMedia('video');
         img.innerHTML = mediaBoxx.videoLightbox;
       }
     } else {
       i = i + 1;
       let mediaBox = new MediaFactory(tab[i]);
       if (tab[i].image !== undefined) {
-        let mediaBoxx = mediaBox.createMedia("image");
+        let mediaBoxx = mediaBox.createMedia('image');
         img.innerHTML = mediaBoxx.pictureLightbox;
       } else if (tab[i].video !== undefined) {
-        let mediaBoxx = mediaBox.createMedia("video");
+        let mediaBoxx = mediaBox.createMedia('video');
         img.innerHTML = mediaBoxx.videoLightbox;
       }
     }
   });
-  nextel.addEventListener("keydown", (event) => {
+  nextel.addEventListener('keydown', (event) => {
     if (event.which === keyCodes.enter) {
-      img.innerHTML = "";
+      img.innerHTML = '';
       if (i == 0) {
         i = tab.length - 1;
         let mediaBox = new MediaFactory(tab[i]);
         if (tab[i].image !== undefined) {
-          let mediaBoxx = mediaBox.createMedia("image");
+          let mediaBoxx = mediaBox.createMedia('image');
           img.innerHTML = mediaBoxx.pictureLightbox;
         } else if (tab[i].video !== undefined) {
-          let mediaBoxx = mediaBox.createMedia("video");
+          let mediaBoxx = mediaBox.createMedia('video');
           img.innerHTML = mediaBoxx.videoLightbox;
         }
       } else {
         i = i - 1;
         let mediaBox = new MediaFactory(tab[i]);
         if (tab[i].image !== undefined) {
-          let mediaBoxx = mediaBox.createMedia("image");
+          let mediaBoxx = mediaBox.createMedia('image');
           img.innerHTML = mediaBoxx.pictureLightbox;
         } else if (tab[i].video !== undefined) {
-          let mediaBoxx = mediaBox.createMedia("video");
+          let mediaBoxx = mediaBox.createMedia('video');
           img.innerHTML = mediaBoxx.videoLightbox;
         }
       }
@@ -133,54 +131,54 @@ function prevNextKey(i, tab) {
     right: 39,
     left: 37,
   };
-  let img = document.querySelector(".modalThumb-img");
-  window.addEventListener("keydown", (event) => {
+  let img = document.querySelector('.modalThumb-img');
+  window.addEventListener('keydown', (event) => {
     if (event.which === keyss.right) {
-      img.innerHTML = "";
+      img.innerHTML = '';
       if (i == tab.length - 1) {
         i = 0;
         let mediaBox = new MediaFactory(tab[i]);
         if (tab[i].image !== undefined) {
-          let mediaBoxx = mediaBox.createMedia("image");
+          let mediaBoxx = mediaBox.createMedia('image');
           img.innerHTML = mediaBoxx.pictureLightbox;
         } else if (tab[i].video !== undefined) {
-          let mediaBoxx = mediaBox.createMedia("video");
+          let mediaBoxx = mediaBox.createMedia('video');
           img.innerHTML = mediaBoxx.videoLightbox;
         }
       } else {
         i = i + 1;
         let mediaBox = new MediaFactory(tab[i]);
         if (tab[i].image !== undefined) {
-          let mediaBoxx = mediaBox.createMedia("image");
+          let mediaBoxx = mediaBox.createMedia('image');
           img.innerHTML = mediaBoxx.pictureLightbox;
         } else if (tab[i].video !== undefined) {
-          let mediaBoxx = mediaBox.createMedia("video");
+          let mediaBoxx = mediaBox.createMedia('video');
           img.innerHTML = mediaBoxx.videoLightbox;
         }
       }
     }
     if (event.which === keyss.left) {
-      console.log("prev");
+      console.log('prev');
 
-      img.innerHTML = "";
+      img.innerHTML = '';
       if (i == 0) {
         i = tab.length - 1;
         let mediaBox = new MediaFactory(tab[i]);
         if (tab[i].image !== undefined) {
-          let mediaBoxx = mediaBox.createMedia("image");
+          let mediaBoxx = mediaBox.createMedia('image');
           img.innerHTML = mediaBoxx.pictureLightbox;
         } else if (tab[i].video !== undefined) {
-          let mediaBoxx = mediaBox.createMedia("video");
+          let mediaBoxx = mediaBox.createMedia('video');
           img.innerHTML = mediaBoxx.videoLightbox;
         }
       } else {
         i = i - 1;
         let mediaBox = new MediaFactory(tab[i]);
         if (tab[i].image !== undefined) {
-          let mediaBoxx = mediaBox.createMedia("image");
+          let mediaBoxx = mediaBox.createMedia('image');
           img.innerHTML = mediaBoxx.pictureLightbox;
         } else if (tab[i].video !== undefined) {
-          let mediaBoxx = mediaBox.createMedia("video");
+          let mediaBoxx = mediaBox.createMedia('video');
           img.innerHTML = mediaBoxx.videoLightbox;
         }
       }
@@ -189,9 +187,9 @@ function prevNextKey(i, tab) {
 }
 
 function Modal() {
-  const triggerss = document.getElementsByClassName("img");
-  const modal = document.querySelector(".modalThum");
-  const closeBtn = document.querySelector(".close");
+  const triggerss = document.getElementsByClassName('img');
+  const modal = document.querySelector('.modalThum');
+  const closeBtn = document.querySelector('.close');
   const keys = {
     tab: 9,
     enter: 13,
@@ -200,7 +198,7 @@ function Modal() {
     left: 37,
   };
 
-  const focusableElementsArray = ["span:not([disabled])"];
+  const focusableElementsArray = ['span:not([disabled])'];
   const focusableElements = modal.querySelectorAll(focusableElementsArray);
   console.log(focusableElements);
   const firstFocusableElement = focusableElements[0];
@@ -213,7 +211,7 @@ function Modal() {
     // trapping focus inside the dialog
     focusableElements.forEach((focusableElement) => {
       if (focusableElement.addEventListener) {
-        focusableElement.addEventListener("keydown", (event) => {
+        focusableElement.addEventListener('keydown', (event) => {
           const tab = event.which === keyCodes.tab;
           if (!tab) {
             return;
@@ -234,25 +232,25 @@ function Modal() {
     });
   }, 100);
 
-  modal.setAttribute("aria-hidden", false);
-  doc.setAttribute("aria-hidden", true);
+  modal.setAttribute('aria-hidden', false);
+  doc.setAttribute('aria-hidden', true);
   for (let i = 0; i < triggerss.length; i++) {
-    closeBtn.addEventListener("click", (event) => {
+    closeBtn.addEventListener('click', (event) => {
       event.preventDefault();
       closee(modal);
     });
-    closeBtn.addEventListener("keydown", (event) => {
+    closeBtn.addEventListener('keydown', (event) => {
       if (event.which === keys.enter) {
         event.preventDefault();
         closee(modal);
       }
     });
-    window.addEventListener("keydown", (event) => {
+    window.addEventListener('keydown', (event) => {
       if (event.which === keys.escape) {
         closee(modal);
       }
     });
-    window.addEventListener("click", (event) => {
+    window.addEventListener('click', (event) => {
       if (event.target === modal) {
         closee(modal);
       }
@@ -261,6 +259,6 @@ function Modal() {
 }
 
 function closee(modal) {
-  modal.setAttribute("aria-hidden", true);
-  doc.setAttribute("aria-hidden", false);
+  modal.setAttribute('aria-hidden', true);
+  doc.setAttribute('aria-hidden', false);
 }

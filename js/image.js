@@ -8,6 +8,7 @@ export default class Image {
     this.likes = data.likes;
     this.date = data.date;
     this.price = data.price;
+    this.alt = data.alt;
   }
   get pictureCard() {
     if (localStorage.getItem('media_' + this.id)) {
@@ -20,7 +21,7 @@ export default class Image {
         <span class="id" >${this.id}</span>
           <img 
               src="ressources/sample-photos/${this.image}" 
-              alt="${this.title}" 
+              alt="${this.alt}" 
               class="img"
               type="button" 
              tabindex="0"
@@ -45,7 +46,7 @@ export default class Image {
     <div>
       <img 
           src="ressources/sample-photos/${this.image}" 
-          alt="${this.title}" 
+          alt="${this.alt}" 
           class="modalThumb-img-img"
           
           
