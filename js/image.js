@@ -19,7 +19,7 @@ export default class Image {
               <li class="lists-tof-img">
         <span class="id" >${this.id}</span>
           <img 
-              src="./../ressources/sample-photos/${this.image}" 
+              src="ressources/sample-photos/${this.image}" 
               alt="${this.title}" 
               class="img"
               type="button" 
@@ -44,7 +44,7 @@ export default class Image {
     return `
     <div>
       <img 
-          src="./../ressources/sample-photos/${this.image}" 
+          src="ressources/sample-photos/${this.image}" 
           alt="${this.title}" 
           class="modalThumb-img-img"
           

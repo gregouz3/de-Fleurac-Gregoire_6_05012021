@@ -20,7 +20,7 @@ export default class Video {
           <video                aria-haspopup="dialog" aria-controls="modalThumb" 
           controls class="img" aria-label="Ouvrir ${this.title} en vue lightbox">
               <source 
-                src="./../ressources/sample-photos/${this.video}"
+                src="ressources/sample-photos/${this.video}"
                 type="video/mp4"
                 alt="${this.title}"
               >
@@ -42,7 +42,7 @@ export default class Video {
       <div>
         <video  controls class="modalThumb-img_vid" >
             <source 
-              src="./../ressources/sample-photos/${this.video}"
+              src="ressources/sample-photos/${this.video}"
               type="video/mp4"
               alt="${this.title}"
             >
