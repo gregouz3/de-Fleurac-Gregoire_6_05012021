@@ -1,15 +1,20 @@
-mybutton = document.getElementById("upBtn");
-// When the user scrolls down 20px from the top of the document, show the button
-document.body.onscroll = function() {scrollFunction()};
+const mybutton = document.getElementById('upBtn');
+document.body.onscroll = function () {
+  //show or hide btn with scroll
+
+  scrollFunction();
+};
 
 function scrollFunction() {
-  var btn = document.querySelector('#button');
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20)  {
-    mybutton.style.display = "none";
-    btn.style.left = "10px";
+  const mybutton = document.getElementById('upBtn');
+
+  const btn = document.querySelector('#button');
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = 'none';
+    btn.style.left = '10px';
     btn.className = 'show';
   } else {
-    mybutton.style.display = "block";
+    mybutton.style.display = 'block';
     btn.className = '';
   }
 }

@@ -1,5 +1,5 @@
 {
-  "media": [
+  "medias": [
     {
       "id": 342550,
       "photographerId": 82,
@@ -11,7 +11,7 @@
       "likes": 62,
       "date": "2011-12-08",
       "price": 55,
-      "alt-text": "picture Fashion Yellow Beach"
+      "alt-text": "image de Fashion Yellow Beach"
     },
     {
       "id": 8520927,
@@ -24,7 +24,7 @@
       "likes": 11,
       "date": "2011-11-06",
       "price": 55,
-      "alt-text": "picture Fashion Urban Jungle"
+      "alt-text": "image de Fashion Urban Jungle"
     },
     {
       "id": 9025895,
@@ -37,7 +37,7 @@
       "likes": 72,
       "date": "2013-08-12",
       "price": 55,
-      "alt-text": "picture Fashion Pattern on a Pattern"
+      "alt-text": "image de Fashion Pattern on a Pattern"
     },
     {
       "id": 9275938,
@@ -50,7 +50,7 @@
       "likes": 69,
       "date": "2018-02-22",
       "price": 55,
-      "alt-text": "picture Wedding Gazebo"
+      "alt-text": "image de Wedding Gazebo"
     },
     {
       "id": 2053494,
@@ -63,7 +63,7 @@
       "likes": 2,
       "date": "2020-05-25",
       "price": 55,
-      "alt-text": "picture Sparkles"
+      "alt-text": "image de Sparkles"
     },
     {
       "id": 7324238,
@@ -76,7 +76,7 @@
       "likes": 33,
       "date": "2019-06-12",
       "price": 55,
-      "alt-text": "picture 18th Anniversary"
+      "alt-text": "image de 18th Anniversary"
     },
     {
       "id": 8328953,
@@ -89,7 +89,7 @@
       "likes": 24,
       "date": "2011-12-08",
       "price": 100,
-      "alt-text": "picture Wooden Horse Sculpture"
+      "alt-text": "video de Wooden Horse Sculpture"
     },
     {
       "id": 7502053,
@@ -102,7 +102,7 @@
       "likes": 88,
       "date": "2007-05-07",
       "price": 55,
-      "alt-text": "picture Triangle Man"
+      "alt-text": "image de Triangle Man"
     },
     {
       "id": 8523492,
@@ -115,7 +115,7 @@
       "likes": 24,
       "date": "2018-05-05",
       "price": 55,
-      "alt-text": "picture Purple Tunnel"
+      "alt-text": "image de Purple Tunnel"
     },
     {
       "id": 75902334,
@@ -128,7 +128,7 @@
       "likes": 75,
       "date": "2019-11-25",
       "price": 55,
-      "alt-text": "picture Art Mine"
+      "alt-text": "image de Art Mine"
     },
     {
       "id": 73852953,
@@ -141,7 +141,7 @@
       "likes": 52,
       "date": "2013-02-30",
       "price": 70,
-      "alt-text": "picture 8 Rows"
+      "alt-text": "image de 8 Rows"
     },
     {
       "id": 92758372,
@@ -154,7 +154,7 @@
       "likes": 58,
       "date": "2018-07-17",
       "price": 70,
-      "alt-text": "picture Fashion Wings"
+      "alt-text": "image de Fashion Wings"
     },
     {
       "id": 32958383,
@@ -167,7 +167,7 @@
       "likes": 11,
       "date": "2019-08-12",
       "price": 70,
-      "alt-text": "picture Melody Red on Stripes"
+      "alt-text": "image de Melody Red on Stripes"
     },
     {
       "id": 928587383,
@@ -180,7 +180,7 @@
       "likes": 2,
       "date": "2019-01-02",
       "price": 70,
-      "alt-text": "picture Venture Conference"
+      "alt-text": "image de Venture Conference"
     },
     {
       "id": 725639493,
@@ -193,7 +193,7 @@
       "likes": 3,
       "date": "2019-05-20",
       "price": 70,
-      "alt-text": "picture Product Pitch"
+      "alt-text": "image de Product Pitch"
     },
     {
       "id": 23394384,
@@ -206,7 +206,7 @@
       "likes": 52,
       "date": "2019-07-18",
       "price": 70,
-      "alt-text": "picture Musical Festival Keyboard"
+      "alt-text": "image de Musical Festival Keyboard"
     },
     {
       "id": 87367293,
@@ -219,7 +219,7 @@
       "likes": 23,
       "date": "2018-02-22",
       "price": 70,
-      "alt-text": "picture Musical Festival Singer"
+      "alt-text": "image de Musical Festival Singer"
     },
     {
       "id": 593834784,
@@ -232,7 +232,7 @@
       "likes": 52,
       "date": "2017-03-13",
       "price": 70,
-      "alt-text": "picture Animal Majesty"
+      "alt-text": "image de Animal Majesty"
     },
     {
       "id": 83958935,
@@ -245,7 +245,7 @@
       "likes": 52,
       "date": "2016-06-12",
       "price": 70,
-      "alt-text": "picture Cute Puppy on Sunset"
+      "alt-text": "video de Cute Puppy on Sunset"
     },
     {
       "id": 394583434,
@@ -258,7 +258,7 @@
       "likes": 23,
       "date": "2017-03-18",
       "price": 45,
-      "alt-text": "picture Rock Mountains"
+      "alt-text": "video de Rock Mountains"
     },
     {
       "id": 343423425,
@@ -271,7 +271,7 @@
       "likes": 101,
       "date": "2017-04-03",
       "price": 45,
-      "alt-text": "picture Outdoor Baths"
+      "alt-text": "image de Outdoor Baths"
     },
     {
       "id": 73434243,
@@ -284,7 +284,7 @@
       "likes": 99,
       "date": "2018-04-30",
       "price": 45,
-      "alt-text": "picture Road into the Hill"
+      "alt-text": "image de Road into the Hill"
     },
     {
       "id": 23425523,
@@ -297,7 +297,7 @@
       "likes": 34,
       "date": "2016-04-05",
       "price": 45,
-      "alt-text": "picture Bridge into the Forest"
+      "alt-text": "image de Bridge into the Forest"
     },
     {
       "id": 23134513,
@@ -310,7 +310,7 @@
       "likes": 23,
       "date": "2017-03-18",
       "price": 45,
-      "alt-text": "picture Boat Wonderer"
+      "alt-text": "image de Boat Wonderer"
     },
     {
       "id": 92352352,
@@ -323,7 +323,7 @@
       "likes": 66,
       "date": "2018-05-24",
       "price": 45,
-      "alt-text": "picture Portrait Sunkiss"
+      "alt-text": "image de Portrait Sunkiss"
     },
     {
       "id": 34513453,
@@ -336,7 +336,7 @@
       "likes": 52,
       "date": "2017-04-21",
       "price": 45,
-      "alt-text": "picture Shaw Potrait"
+      "alt-text": "image de Shaw Potrait"
     },
     {
       "id": 23523533,
@@ -349,7 +349,7 @@
       "likes": 95,
       "date": "2018-11-02",
       "price": 45,
-      "alt-text": "picture Alexandra"
+      "alt-text": "image de Alexandra"
     },
     {
       "id": 525834234,
@@ -362,7 +362,7 @@
       "likes": 25,
       "date": "2019-01-02",
       "price": 45,
-      "alt-text": "picture Afternoon Break"
+      "alt-text": "image de Afternoon Break"
     },
     {
       "id": 623534343,
@@ -375,7 +375,7 @@
       "likes": 88,
       "date": "2019-02-03",
       "price": 45,
-      "alt-text": "picture Lonesome"
+      "alt-text": "image de Lonesome"
     },
     {
       "id": 625025343,
@@ -388,7 +388,7 @@
       "likes": 85,
       "date": "2019-04-03",
       "price": 45,
-      "alt-text": "picture Hillside Color"
+      "alt-text": "image de Hillside Color"
     },
     {
       "id": 2525345343,
@@ -401,7 +401,7 @@
       "likes": 34,
       "date": "2019-04-07",
       "price": 45,
-      "alt-text": "picture Wednesday Potrait"
+      "alt-text": "image de Wednesday Potrait"
     },
     {
       "id": 2523434634,
@@ -414,7 +414,7 @@
       "likes": 63,
       "date": "2019-04-07",
       "price": 45,
-      "alt-text": "picture Nora Portrait"
+      "alt-text": "image de Nora Portrait"
     },
     {
       "id": 398847109,
@@ -427,7 +427,7 @@
       "likes": 55,
       "date": "2019-06-20",
       "price": 45,
-      "alt-text": "picture Raw Black Portrait"
+      "alt-text": "image de Raw Black Portrait"
     },
     {
       "id": 2534342,
@@ -440,7 +440,7 @@
       "likes": 25,
       "date": "2019-06-21",
       "price": 45,
-      "alt-text": "picture Seaside Wedding"
+      "alt-text": "image de Seaside Wedding"
     },
     {
       "id": 65235234,
@@ -453,7 +453,7 @@
       "likes": 52,
       "date": "2019-06-25",
       "price": 45,
-      "alt-text": "picture Boulder Wedding"
+      "alt-text": "image de Boulder Wedding"
     },
     {
       "id": 23523434,
@@ -466,7 +466,7 @@
       "likes": 77,
       "date": "2019-06-28",
       "price": 45,
-      "alt-text": "picture Benevides Wedding"
+      "alt-text": "image de Benevides Wedding"
     },
     {
       "id": 5234343,
@@ -479,7 +479,7 @@
       "likes": 142,
       "date": "2019-08-23",
       "price": 60,
-      "alt-text": "picture Wild Horses in the Mountains"
+      "alt-text": "video de Wild Horses in the Mountains"
     },
     {
       "id": 95234343,
@@ -492,7 +492,7 @@
       "likes": 59,
       "date": "2019-07-02",
       "price": 60,
-      "alt-text": "picture Rainbow Bird"
+      "alt-text": "image de Rainbow Bird"
     },
     {
       "id": 52343416,
@@ -505,7 +505,7 @@
       "likes": 25,
       "date": "2019-04-03",
       "price": 60,
-      "alt-text": "picture Japanese Tower, Kyoto"
+      "alt-text": "image de Japanese Tower, Kyoto"
     },
     {
       "id": 2523434,
@@ -518,7 +518,7 @@
       "likes": 53,
       "date": "2019-05-06",
       "price": 60,
-      "alt-text": "picture Senset on Canals, Venice"
+      "alt-text": "image de Senset on Canals, Venice"
     },
     {
       "id": 95293534,
@@ -531,7 +531,7 @@
       "likes": 33,
       "date": "2019-05-12",
       "price": 60,
-      "alt-text": "picture Mountain and Lake"
+      "alt-text": "image de Mountain and Lake"
     },
     {
       "id": 356234343,
@@ -544,7 +544,7 @@
       "likes": 53,
       "date": "2019-06-20",
       "price": 60,
-      "alt-text": "picture City Bike and Stair, Paris"
+      "alt-text": "image de City Bike and Stair, Paris"
     },
     {
       "id": 235234343,
@@ -557,7 +557,7 @@
       "likes": 63,
       "date": "2019-06-26",
       "price": 60,
-      "alt-text": "picture Adventure Door, India"
+      "alt-text": "image de Adventure Door, India"
     },
     {
       "id": 6234234343,
@@ -570,7 +570,7 @@
       "likes": 52,
       "date": "2019-06-30",
       "price": 60,
-      "alt-text": "picture Contrast, St Petersburg"
+      "alt-text": "image de Contrast, St Petersburg"
     },
     {
       "id": 6525666253,
@@ -583,7 +583,7 @@
       "likes": 63,
       "date": "2019-07-20",
       "price": 60,
-      "alt-text": "picture On a Hill, Tibet"
+      "alt-text": "image de On a Hill, Tibet"
     },
     {
       "id": 98252523433,
@@ -596,7 +596,7 @@
       "likes": 88,
       "date": "2020-01-05",
       "price": 60,
-      "alt-text": "picture Leaning Tower, Pisa"
+      "alt-text": "image de Leaning Tower, Pisa"
     },
     {
       "id": 9259398453,
@@ -609,7 +609,7 @@
       "likes": 57,
       "date": "2020-01-20",
       "price": 65,
-      "alt-text": "picture Circle Highways, Buenos Aires"
+      "alt-text": "video de Circle Highways, Buenos Aires"
     },
     {
       "id": 3523523534,
@@ -622,7 +622,7 @@
       "likes": 54,
       "date": "2020-05-05",
       "price": 60,
-      "alt-text": "picture Corner Building and Blue Sky"
+      "alt-text": "image de Corner Building and Blue Sky"
     },
     {
       "id": 952343423,
@@ -635,7 +635,7 @@
       "likes": 150,
       "date": "2018-02-30",
       "price": 70,
-      "alt-text": "picture Tricks in the Air"
+      "alt-text": "video de Tricks in the Air"
     },
     {
       "id": 235234343,
@@ -648,7 +648,7 @@
       "likes": 101,
       "date": "2018-03-05",
       "price": 65,
-      "alt-text": "picture Climber"
+      "alt-text": "image de Climber"
     },
     {
       "id": 235343222,
@@ -661,7 +661,7 @@
       "likes": 103,
       "date": "2018-03-10",
       "price": 70,
-      "alt-text": "picture Surfer"
+      "alt-text": "image de Surfer"
     },
     {
       "id": 7775342343,
@@ -674,7 +674,7 @@
       "likes": 77,
       "date": "2018-04-16",
       "price": 50,
-      "alt-text": "picture Skier"
+      "alt-text": "image de Skier"
     },
     {
       "id": 9253445784,
@@ -687,7 +687,7 @@
       "likes": 88,
       "date": "2018-04-22",
       "price": 65,
-      "alt-text": "picture Race End"
+      "alt-text": "image de Race End"
     },
     {
       "id": 22299394,
@@ -700,7 +700,7 @@
       "likes": 95,
       "date": "2018-04-27",
       "price": 70,
-      "alt-text": "picture Jump!"
+      "alt-text": "image de Jump!"
     },
     {
       "id": 3452342633,
@@ -713,7 +713,7 @@
       "likes": 52,
       "date": "2018-05-03",
       "price": 75,
-      "alt-text": "picture White Light"
+      "alt-text": "image de White Light"
     },
     {
       "id": 939234243,
@@ -726,7 +726,7 @@
       "likes": 55,
       "date": "2018-05-10",
       "price": 72,
-      "alt-text": "picture Water on Modern Building"
+      "alt-text": "image de Water on Modern Building"
     },
     {
       "id": 222959233,
@@ -739,7 +739,7 @@
       "likes": 85,
       "date": "2018-05-15",
       "price": 71,
-      "alt-text": "picture Horseshoe"
+      "alt-text": "image de Horseshoe"
     },
     {
       "id": 965933434,
@@ -752,7 +752,7 @@
       "likes": 66,
       "date": "2018-05-20",
       "price": 58,
-      "alt-text": "picture Cross Bar"
+      "alt-text": "image de Cross Bar"
     },
     {
       "id": 777723343,
@@ -765,7 +765,7 @@
       "likes": 79,
       "date": "2018-05-21",
       "price": 80,
-      "alt-text": "picture Connected Curves"
+      "alt-text": "image de Connected Curves"
     }
   ]
 }

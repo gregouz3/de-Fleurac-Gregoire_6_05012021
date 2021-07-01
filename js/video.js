@@ -10,8 +10,8 @@ export default class Video {
     this.price = data.price;
   }
   get videoCard() {
-    if (localStorage.getItem("media_" + this.id)) {
-      let toff = JSON.parse(localStorage.getItem("media_" + this.id));
+    if (localStorage.getItem('media_' + this.id)) {
+      let toff = JSON.parse(localStorage.getItem('media_' + this.id));
       this.likes = toff.likes;
     }
     return `

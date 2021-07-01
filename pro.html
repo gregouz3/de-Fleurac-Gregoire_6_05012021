@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- title ==> photographerName-->
     <title id="title">FishEy</title>
     <link rel="icon" href="./ressources/icons/favicon.png" />
     <link rel="stylesheet" type="text/css" href="./css/style.css" />
@@ -11,12 +12,14 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap"
       rel="stylesheet"
     />
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
+    />
   </head>
 
   <body id="body">
+    <!-- buttons scrolls-->
     <button
       class="upBtn"
       id="upBtn"
@@ -26,87 +29,126 @@
     >
       Passer au contenu
     </button>
-    <a id="button" onclick="goTop()" aria-label="Revenir en  haut de la page"></a>
+    <a
+      id="button"
+      onclick="goTop()"
+      aria-label="Revenir en  haut de la page"
+    ></a>
     <header role="banner" class="header">
-        <a href="index.html">
-          <img src="./ressources/icons/logo.png" alt="Fisheye Home page"/>
-        </a>
+      <a href="index.html">
+        <img src="./ressources/icons/logo.png" alt="Fisheye Home page" />
+      </a>
     </header>
-    <main role="main">
+    <main role="main" class="js-document">
+      <!--Banniere du photographe-->
       <section id="list" class="list" role="region"></section>
+
       <section id="photos">
-        <div class="drop" id="drop" aria-labelledby="trie" >
+        <!--menu deroulant de trie-->
+        <div class="drop" id="drop" aria-labelledby="trie">
           <p>Trier par</p>
-          <div class="custom-select-wrapper" >
+          <div class="custom-select-wrapper">
             <div class="custom-select">
-              <div class="custom-select__trigger" role="button" tabindex="0" aria-label="Order by">
+              <div
+                class="custom-select__trigger"
+                role="button"
+                tabindex="0"
+                aria-label="Order by"
+              >
+                <!--trie par default -->
                 <span id="trie">Popularité</span>
                 <a class="arrow"></a>
               </div>
               <div class="custom-options" aria-hidden="true">
                 <span class="borderTop"></span>
-                <span role="menuitem"class="custom-option selected" data-value="popularite"
+                <span
+                  role="menuitem"
+                  class="custom-option selected"
+                  data-value="popularite"
                   >Popularité</span
                 >
-                <span  tabindex="0" role="menuitem"class="custom-option" data-value="date">Date</span>
-                <span tabindex="0"  role="menuitem"class="custom-option" data-value="titre">Titre</span>
+                <span
+                  tabindex="0"
+                  role="menuitem"
+                  class="custom-option"
+                  data-value="date"
+                  >Date</span
+                >
+                <span
+                  tabindex="0"
+                  role="menuitem"
+                  class="custom-option"
+                  data-value="titre"
+                  >Titre</span
+                >
                 <span class="borderBot"></span>
               </div>
             </div>
           </div>
         </div>
-        <ul class="lists-tof">
-
-        </ul>
+        <!--realisations du photographe-->
+        <ul class="lists-tof"></ul>
       </section>
-      <main class="js-document">
-        </main>
+      <!--dialog Formulaire de contact-->
       <div class="js-page">
-          <button class="list-ban__modal" tabindex="0" role="button"  aria-haspopup="dialog" aria-controls="dialog" >Contactez-moi</button>
-        <div id="dialog" role="dialog" aria-labelledby="dialog-title" aria-describedby="dialog-desc" aria-modal="true" aria-hidden="true" tabindex="-1" class="c-dialog">
+        <button
+          class="list-ban__modal"
+          tabindex="0"
+          role="button"
+          aria-haspopup="dialog"
+          aria-controls="dialog"
+        >
+          Contactez-moi
+        </button>
+        <div
+          id="dialog"
+          role="dialog"
+          aria-labelledby="dialog-title"
+          aria-describedby="dialog-desc"
+          aria-modal="true"
+          aria-hidden="true"
+          tabindex="-1"
+          class="c-dialog"
+        >
           <div role="document" class="c-dialog__box">
-         
             <div>
-            <div class="head">
-            <h2 id="dialog-title">Contactez-moi</h2>
-            
-            <button  role="button"  aria-label="Fermer" title="Fermer cette fenêtre modale" class="closeee"
-            data-dismiss="dialog"></button>
+              <div class="head">
+                <h2 id="dialog-title">Contactez-moi</h2>
+
+                <button
+                  role="button"
+                  aria-label="Fermer"
+                  title="Fermer cette fenêtre modale"
+                  class="closeee"
+                  data-dismiss="dialog"
+                ></button>
+              </div>
+              <h3 class="content__name"></h3>
             </div>
-            <h3 class="content__name"></h3>
-            </div>
-            
-            <form
-            id="thx" 
-            name="contact"
-            method="GET"
-            role="form"
-          >
-            <div
-              class="formData">
-              <label for="first" >Prénom</label><br>
-              <input
-                class="text-control"
-                type="text"
-                id="first"
-                name="first"
-                required
-              />
-            </div>
-            <div
-              class="formData">
-              <label for="last">Nom</label><br>
-              <input
-                class="text-control"
-                type="text"
-                id="last"
-                name="last"
-                required
+
+            <form id="thx" name="contact" method="GET" role="form">
+              <div class="formData">
+                <label for="first">Prénom</label><br />
+                <input
+                  class="text-control"
+                  type="text"
+                  id="first"
+                  name="first"
+                  required
                 />
-            </div>
-            <div
-              class="formData">
-              <label for="email">E-mail</label><br>
+              </div>
+              <div class="formData">
+                <label for="last">Nom</label><br />
+                <input
+                  class="text-control"
+                  type="text"
+                  id="last"
+                  name="last"
+                  required
+                />
+              </div>
+              <div class="formData">
+                <label for="email">E-mail</label><br />
                 <input
                   class="text-control"
                   type="email"
@@ -114,45 +156,55 @@
                   name="email"
                   required
                 />
-            </div>
-            <div
-            class="formData--msg">
-              <label for="msg">Votre message</label>
-              <textarea name="msg" id="msg" cols="33" rows="5" >
-              </textarea>
-            </div>
-        
-            <button
-              class="sendd"
-              data-dismiss="dialog"
-              type="button"
-              onclick="send()">Envoyer</button>
-          </form>
+              </div>
+              <div class="formData--msg">
+                <label for="msg">Votre message</label>
+                <textarea name="msg" id="msg" cols="33" rows="5"> </textarea>
+              </div>
+
+              <button
+                class="sendd"
+                data-dismiss="dialog"
+                type="button"
+                onclick="send()"
+              >
+                Envoyer
+              </button>
+            </form>
           </div>
         </div>
       </div>
-
-      <div id="modalThumb" class="modalThum"
-      tabindex="-1"
-      role="dialog"
-      aria-modal="true"
-      aria-hidden="true"
-      aria-labelledby="modalThumb-title">
-      <div role="document" class="modalThumb">
-        <span id="close" class="close" aria-label="Fermer"
-        title="Fermer cette fenêtre modale" tabindex="0"
-        data-dismiss="modalThum" role="button"></span>
-        <div class="modalThumb-img" id="lightBox"></div>
-        <span class="prev" tabindex="0">&#10094;</span>
-        <span class="next" tabindex="0">&#10095;</span>
-      </div>
-   
- 
+      <!--dialog vue lightbox des realisations du photographe-->
+      <div
+        id="modalThumb"
+        class="modalThum"
+        tabindex="-1"
+        role="dialog"
+        aria-modal="true"
+        aria-hidden="true"
+        aria-labelledby="modalThumb-title"
+      >
+        <div role="document" class="modalThumb">
+          <span
+            id="close"
+            class="close"
+            aria-label="Fermer"
+            title="Fermer cette fenêtre modale"
+            tabindex="0"
+            data-dismiss="modalThum"
+            role="button"
+          ></span>
+          <div class="modalThumb-img" id="lightBox"></div>
+          <span class="prev" tabindex="0">&#10094;</span>
+          <span class="next" tabindex="0">&#10095;</span>
         </div>
+      </div>
+      <!--footer likes total  and price du photographe-->
       <div class="list-ban-likeAndPrice" role="complementary">
         <div class="lists-ban-likeAndPrice_like">
           <span id="likePhotograph"></span>
-          <svg role="image"
+          <svg
+            role="image"
             xmlns="http://www.w3.org/2000/svg"
             width="16"
             height="16"
@@ -162,19 +214,20 @@
           >
             <path
               fill-rule="evenodd"
-              d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"m
+              d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"
+              m
             />
           </svg>
         </div>
         <p
           class="lists-ban-likeAndPrice_price"
-          id="lists-ban-likeAndPrice_price" 
+          id="lists-ban-likeAndPrice_price"
         ></p>
       </div>
     </main>
     <script src="./js/modalForm.js"></script>
     <script src="./js/filterMedias.js" type="module"></script>
-    <script src="./js/scroll1.js" ></script>
+    <script src="./js/scroll1.js"></script>
     <script src="./js/lightbox.js" type="module"></script>
     <script src="./js/photographerBanner.js" type="module"></script>
   </body>
