@@ -46,47 +46,28 @@
       <section id="photos">
         <!--menu deroulant de trie-->
         <div class="drop" id="drop" aria-labelledby="trie">
-          <p>Trier par</p>
-          <div class="custom-select-wrapper">
-            <div class="custom-select">
-              <div
-                class="custom-select__trigger"
-                role="button"
-                tabindex="0"
-                aria-label="Order by"
-              >
-                <!--trie par default -->
-                <span id="trie">Popularité</span>
-                <a class="arrow"></a>
-              </div>
-              <div class="custom-options" aria-hidden="true">
-                <span class="borderTop"></span>
-                <span
-                  role="menuitem"
-                  class="custom-option selected"
-                  data-value="popularite"
-                  >Popularité</span
-                >
-                <span
-                  tabindex="0"
-                  role="menuitem"
-                  class="custom-option"
-                  data-value="date"
-                  >Date</span
-                >
-                <span
-                  tabindex="0"
-                  role="menuitem"
-                  class="custom-option"
-                  data-value="titre"
-                  >Titre</span
-                >
-                <span class="borderBot"></span>
-              </div>
-            </div>
-          </div>
+          <label class="p" for="dropMenu">Trier par</label>
+          <select
+            id="dropMenu"
+            class="custom-select__trigger"
+            role="button"
+            tabindex="0"
+            aria-label="Order by"
+          >
+            <option role="menuitem" class="custom-option" value="popularite">
+              Popularité
+            </option>
+            <option role="menuitem" class="custom-option" value="date">
+              Date
+            </option>
+            <option role="menuitem" class="custom-option" value="titre">
+              Titre
+            </option>
+          </select>
         </div>
+
         <!--realisations du photographe-->
+
         <ul class="lists-tof"></ul>
       </section>
       <!--dialog Formulaire de contact-->

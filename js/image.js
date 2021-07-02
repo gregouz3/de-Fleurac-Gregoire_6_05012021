@@ -9,6 +9,7 @@ export default class Image {
     this.date = data.date;
     this.price = data.price;
     this.alt = data.alt;
+ //   this.alt - text = data.alt - text;
   }
   get pictureCard() {
     if (localStorage.getItem('media_' + this.id)) {

@@ -765,7 +765,7 @@ h1 {
     margin: 0;
   }
 }
-.drop p {
+.drop .p {
   margin-top: 0.5rem;
   font-weight: bold;
 }
@@ -822,36 +822,26 @@ h1 {
 }
 
 .custom-select__trigger {
-  position: relative;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   font-weight: 300;
   color: white;
   height: 50px;
-  line-height: 50px;
+  width: 100px;
   background: #901c1c;
   cursor: pointer;
   border-radius: 5px;
 }
 
-#trie {
+#dropMenu {
   margin-left: 1rem;
   font-size: 0.9rem;
 }
 
-.custom-options {
-  position: absolute;
-  display: block;
-  top: 90%;
-  left: 0;
-  right: 0;
+.custom-option {
   background: #901c1c;
   transition: all 0.3s;
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  z-index: 2;
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
 }
@@ -864,15 +854,7 @@ h1 {
 }
 
 .custom-option {
-  position: relative;
-  display: block;
-  padding-left: 1rem;
-  font-weight: 300;
-  color: white;
-  line-height: 50px;
-  cursor: pointer;
-  transition: all 0.3s;
-  font-size: 0.9rem;
+  height: 50px;
 }
 
 .custom-option:hover {

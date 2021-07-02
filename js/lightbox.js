@@ -1,7 +1,6 @@
 import MediaFactory from './mediaFactory.js';
 
 export default function lightbox(i, tab) {
-  Modal();
   let img = document.querySelector('.modalThumb-img');
   img.innerHTML = '';
   let mediaBox = new MediaFactory(tab[i]);
@@ -13,8 +12,11 @@ export default function lightbox(i, tab) {
     img.innerHTML = mediaBoxx.videoLightbox;
   }
   prevNext(i, tab);
+  //focus and close
+  Modal();
 }
 
+//nav  - clic + enter fleche gauche droite
 function prevNext(i, tab) {
   let img = document.querySelector('.modalThumb-img');
   const prevel = document.querySelector('.prev');
@@ -123,6 +125,7 @@ function prevNext(i, tab) {
   prevNextKey(i, tab);
 }
 
+//prev next juste avec les fleches du clavier
 function prevNextKey(i, tab) {
   const keyss = {
     tab: 9,
@@ -186,6 +189,7 @@ function prevNextKey(i, tab) {
   });
 }
 
+//gestion focus
 function Modal() {
   const triggerss = document.getElementsByClassName('img');
   const modal = document.querySelector('.modalThum');
@@ -237,22 +241,22 @@ function Modal() {
   for (let i = 0; i < triggerss.length; i++) {
     closeBtn.addEventListener('click', (event) => {
       event.preventDefault();
-      closee(modal);
+      closee(modal, i);
     });
     closeBtn.addEventListener('keydown', (event) => {
       if (event.which === keys.enter) {
         event.preventDefault();
-        closee(modal);
+        closee(modal, i);
       }
     });
     window.addEventListener('keydown', (event) => {
       if (event.which === keys.escape) {
-        closee(modal);
+        closee(modal, i);
       }
     });
     window.addEventListener('click', (event) => {
       if (event.target === modal) {
-        closee(modal);
+        closee(modal, i);
       }
     });
   }
@@ -261,4 +265,5 @@ function Modal() {
 function closee(modal) {
   modal.setAttribute('aria-hidden', true);
   doc.setAttribute('aria-hidden', false);
+  document.querySelector('.img').focus();
 }

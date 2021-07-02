@@ -18,7 +18,7 @@ html {
   padding: 0;
   text-decoration: none;
   list-style-type: none;
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: 'Noto Sans JP', sans-serif;
 }
 *,
 *::before,
@@ -139,7 +139,7 @@ body::-webkit-scrollbar {
   z-index: 1000;
 }
 #button::after {
-  content: "\f077";
+  content: '\f077';
   font-family: FontAwesome;
   font-weight: normal;
   font-style: normal;
@@ -424,7 +424,7 @@ h1 {
   background-color: rgba(black, 0.75);
   transition: 0.2s;
 }
-#dialogg[aria-hidden="true"] {
+#dialogg[aria-hidden='true'] {
   visibility: hidden;
   opacity: 0;
 }
@@ -500,7 +500,7 @@ h1 {
   & .closeee:after {
     position: absolute;
     left: 15px;
-    content: " ";
+    content: ' ';
     height: 50px;
     width: 5px;
     background-color: white;
@@ -565,7 +565,7 @@ h1 {
   display: flex;
 }
 // hidden dialog
-.c-dialog[aria-hidden="true"] {
+.c-dialog[aria-hidden='true'] {
   visibility: hidden;
   opacity: 0;
 }
@@ -584,7 +584,7 @@ h1 {
 }
 
 // Modal form
-.modalThum[aria-hidden="true"] {
+.modalThum[aria-hidden='true'] {
   visibility: hidden;
   opacity: 0;
 }
@@ -655,7 +655,7 @@ h1 {
     }
     .close:before,
     .close:after {
-      content: " ";
+      content: ' ';
       height: 50px;
       width: 5px;
       background-color: $primary;
@@ -703,7 +703,7 @@ h1 {
     }
   }
 }
-.content[aria-hidden="true"] {
+.content[aria-hidden='true'] {
   visibility: hidden;
   opacity: 0;
 }
@@ -725,7 +725,7 @@ h1 {
     justify-content: center;
     margin: 0;
   }
-  & p {
+  & .p {
     margin-top: 0.5rem;
     font-weight: bold;
   }
@@ -734,7 +734,7 @@ h1 {
 .close:after {
   position: absolute;
   left: 15px;
-  content: " ";
+  content: ' ';
   height: 33px;
   width: 3px;
   background-color: black;
@@ -775,34 +775,25 @@ h1 {
   margin: 0 5%;
 }
 .custom-select__trigger {
-  position: relative;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   font-weight: 300;
   color: white;
   height: 50px;
-  line-height: 50px;
+  width: 100px;
   background: $primary;
   cursor: pointer;
   border-radius: 5px;
 }
-#trie {
+#dropMenu {
   margin-left: 1rem;
   font-size: 0.9rem;
 }
-.custom-options {
-  position: absolute;
-  display: block;
-  top: 90%;
-  left: 0;
-  right: 0;
+
+.custom-option {
   background: $primary;
   transition: all 0.3s;
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  z-index: 2;
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
 }
@@ -813,15 +804,7 @@ h1 {
   width: 150px;
 }
 .custom-option {
-  position: relative;
-  display: block;
-  padding-left: 1rem;
-  font-weight: 300;
-  color: white;
-  line-height: 50px;
-  cursor: pointer;
-  transition: all 0.3s;
-  font-size: 0.9rem;
+  height: 50px;
 }
 .custom-option:hover {
   cursor: pointer;
@@ -843,7 +826,7 @@ h1 {
 }
 .arrow::before,
 .arrow::after {
-  content: "";
+  content: '';
   position: absolute;
   bottom: 0px;
   width: 0.15rem;
