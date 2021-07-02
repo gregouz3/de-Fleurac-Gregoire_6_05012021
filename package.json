@@ -11,5 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "parvus": "^1.4.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.29.0"
   }
 }

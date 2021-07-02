@@ -74,7 +74,7 @@ triggers.forEach((trigger) => {
   const dialog = document.getElementById(trigger.getAttribute('aria-controls'));
   const dismissTriggers = dialog.querySelectorAll('[data-dismiss]');
 
-  trigger.addEventListener('click', (event) => {
+  trigger.addEventListener('click', () => {
     console.log('click');
     open(dialog);
   });
@@ -93,7 +93,6 @@ triggers.forEach((trigger) => {
 
     dismissTrigger.addEventListener('click', (event) => {
       event.preventDefault();
-
       close(dismissDialog);
     });
   });

@@ -76,7 +76,6 @@ function triee() {
       .map((option) => option.text);
     console.log(selectedValues[0]);
     if (selectedValues[0] == 'Popularité') {
-      console.log('ha');
       media.sort((a, b) =>
         a.likes > b.likes ? -1 : b.likes > a.likes ? 1 : 0
       );
@@ -95,8 +94,6 @@ function triee() {
       displayWithSort(media);
     }
   });
-
-  //enter key
 }
 
 function displayWithSort(media) {
@@ -174,7 +171,7 @@ function displayWithSort(media) {
             likeTotal++;
             //refresh trie si un media depasse en popularité un autre media pour la cohérence du trie
             if (
-              document.getElementById('dropMenu').textContent == 'Popularité'
+              document.getElementById('dropMenu').textContent == 'popularité'
             ) {
               if (tab[i - 1] !== undefined && tab[i].likes > tab[i - 1].likes) {
                 trie();
