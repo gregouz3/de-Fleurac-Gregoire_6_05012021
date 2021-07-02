@@ -25,7 +25,6 @@ async function trie() {
         enumerable: true,
       });
     }*/
-    //ajoût proprieté alt-text
 
     if (mediaa.photographerId == window.location.search.substring(4)) {
       let mediaaa = new MediaFactory(mediaa);
@@ -68,6 +67,9 @@ function triee() {
   media.sort((a, b) => (a.likes > b.likes ? -1 : b.likes > a.likes ? 1 : 0));
   displayWithSort(media);
   btn.addEventListener('click', (e) => {
+    //fleche du menu déroulant
+    document.querySelector('.arrow').classList.toggle('open');
+
     e.preventDefault();
     const selectedValues = [].filter
       .call(sb.options, (option) => option.selected)
@@ -95,34 +97,6 @@ function triee() {
   });
 
   //enter key
-  btn.addEventListener('keydown', (e) => {
-    if (event.which === 13) {
-      e.preventDefault();
-      const selectedValues = [].filter
-        .call(sb.options, (option) => option.selected)
-        .map((option) => option.text);
-      console.log(selectedValues[0]);
-      if (selectedValues[0] == 'Popularité') {
-        console.log('ha');
-        media.sort((a, b) =>
-          a.likes > b.likes ? -1 : b.likes > a.likes ? 1 : 0
-        );
-        displayWithSort(media);
-      }
-      if (selectedValues[0] == 'Date') {
-        media.sort((a, b) => (a.date > b.date ? -1 : b.date > a.date ? 1 : 0));
-        displayWithSort(media);
-      }
-      if (selectedValues[0] == 'Titre') {
-        media.sort(function compare(a, b) {
-          if ((a.title || a.title) < (b.title || b.title)) return -1;
-          if ((a.title || a.title) > (b.title || b.title)) return 1;
-          return 0;
-        });
-        displayWithSort(media);
-      }
-    }
-  });
 }
 
 function displayWithSort(media) {
