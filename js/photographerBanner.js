@@ -19,7 +19,7 @@ async function displayPhotographerBanner() {
         let tagid = document.getElementById('tags' + id);
         let tagg = document.createElement('a');
         tagg.setAttribute('href', 'tag.html?tag=' + `${tagz}`);
-        tagg.setAttribute('aria-label', 'catégorie' + `${tagz}`);
+        tagg.setAttribute('aria-label', 'Aller à la catégorie' + `${tagz}`);
         tagid.appendChild(tagg).innerHTML = '#' + tagz;
       }
     }

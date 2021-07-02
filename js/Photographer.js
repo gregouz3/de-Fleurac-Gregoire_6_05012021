@@ -41,7 +41,7 @@ export default class Photographer {
   get photographerBanner() {
     return `
     <section class="list-ban">
-      <div class="list-ban-info" tabindex="0">
+      <div class="list-ban-info" tabindex="0" aria-label="Vous consulter la page de ${this.name} originaire de  ${this.city}, ${this.country}  ${this.tagline} ${this.price} de taux jouralier moyen">
         <h2 class="list-ban-info__name" role="heading">
         <span id="name">${this.name}</span>
         </h1>
