@@ -9,7 +9,6 @@ export default class Photographer {
     this.price = data.price;
     this.portrait = data.portrait;
   }
-
   get photographerCard() {
     return `
     <li class="block-list" >
