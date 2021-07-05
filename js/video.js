@@ -10,9 +10,10 @@ export default class Video {
     this.price = data.price;
     this.alt = data.alt;
   }
+
   get videoCard() {
-    if (localStorage.getItem('media_' + this.id)) {
-      let toff = JSON.parse(localStorage.getItem('media_' + this.id));
+    if (localStorage.getItem(`media_${this.id}`)) {
+      const toff = JSON.parse(localStorage.getItem(`media_${this.id}`));
       this.likes = toff.likes;
     }
     return `
@@ -38,6 +39,7 @@ export default class Video {
         </li>
         `;
   }
+
   get videoLightbox() {
     return `
       <div>

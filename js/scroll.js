@@ -1,5 +1,5 @@
 document.body.onscroll = function () {
-  //show or hide btn with scroll
+  // show or hide btn with scroll
   scrollFunction();
 };
 
@@ -22,8 +22,8 @@ function goTop() {
 }
 
 function mainFunction() {
-  //scroll en dessous du header
-  let headH = parseInt(document.querySelector('.header').clientHeight) + 80;
+  // scroll en dessous du header
+  const headH = parseInt(document.querySelector('.header').clientHeight) + 80;
   console.log(headH);
   document.body.scrollTop = headH; // For Safari
   document.documentElement.scrollTop = headH; // For Chrome,

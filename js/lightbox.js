@@ -1,46 +1,46 @@
 import MediaFactory from './mediaFactory.js';
 
 export default function lightbox(i, tab) {
-  let img = document.querySelector('.modalThumb-img');
+  const img = document.querySelector('.modalThumb-img');
   img.innerHTML = '';
-  let mediaBox = new MediaFactory(tab[i]);
+  const mediaBox = new MediaFactory(tab[i]);
   if (tab[i].image !== undefined) {
-    let mediaBoxx = mediaBox.createMedia('image');
+    const mediaBoxx = mediaBox.createMedia('image');
     img.innerHTML = mediaBoxx.pictureLightbox;
   } else if (tab[i].video !== undefined) {
-    let mediaBoxx = mediaBox.createMedia('video');
+    const mediaBoxx = mediaBox.createMedia('video');
     img.innerHTML = mediaBoxx.videoLightbox;
   }
   prevNext(i, tab);
-  //focus and close
+  // focus and close
   Modal();
 }
 
-//nav  - clic + enter fleche gauche droite
+// nav  - clic + enter fleche gauche droite
 function prevNext(i, tab) {
-  let img = document.querySelector('.modalThumb-img');
+  const img = document.querySelector('.modalThumb-img');
   const prevel = document.querySelector('.prev');
   prevel.addEventListener('keydown', (event) => {
     if (event.which === keyCodes.enter) {
       img.innerHTML = '';
       if (i == 0) {
         i = tab.length - 1;
-        let mediaBox = new MediaFactory(tab[i]);
+        const mediaBox = new MediaFactory(tab[i]);
         if (tab[i].image !== undefined) {
-          let mediaBoxx = mediaBox.createMedia('image');
+          const mediaBoxx = mediaBox.createMedia('image');
           img.innerHTML = mediaBoxx.pictureLightbox;
         } else if (tab[i].video !== undefined) {
-          let mediaBoxx = mediaBox.createMedia('video');
+          const mediaBoxx = mediaBox.createMedia('video');
           img.innerHTML = mediaBoxx.videoLightbox;
         }
       } else {
-        i = i - 1;
-        let mediaBox = new MediaFactory(tab[i]);
+        i -= 1;
+        const mediaBox = new MediaFactory(tab[i]);
         if (tab[i].image !== undefined) {
-          let mediaBoxx = mediaBox.createMedia('image');
+          const mediaBoxx = mediaBox.createMedia('image');
           img.innerHTML = mediaBoxx.pictureLightbox;
         } else if (tab[i].video !== undefined) {
-          let mediaBoxx = mediaBox.createMedia('video');
+          const mediaBoxx = mediaBox.createMedia('video');
           img.innerHTML = mediaBoxx.videoLightbox;
         }
       }
@@ -50,22 +50,22 @@ function prevNext(i, tab) {
     img.innerHTML = '';
     if (i == 0) {
       i = tab.length - 1;
-      let mediaBox = new MediaFactory(tab[i]);
+      const mediaBox = new MediaFactory(tab[i]);
       if (tab[i].image !== undefined) {
-        let mediaBoxx = mediaBox.createMedia('image');
+        const mediaBoxx = mediaBox.createMedia('image');
         img.innerHTML = mediaBoxx.pictureLightbox;
       } else if (tab[i].video !== undefined) {
-        let mediaBoxx = mediaBox.createMedia('video');
+        const mediaBoxx = mediaBox.createMedia('video');
         img.innerHTML = mediaBoxx.videoLightbox;
       }
     } else {
-      i = i - 1;
-      let mediaBox = new MediaFactory(tab[i]);
+      i -= 1;
+      const mediaBox = new MediaFactory(tab[i]);
       if (tab[i].image !== undefined) {
-        let mediaBoxx = mediaBox.createMedia('image');
+        const mediaBoxx = mediaBox.createMedia('image');
         img.innerHTML = mediaBoxx.pictureLightbox;
       } else if (tab[i].video !== undefined) {
-        let mediaBoxx = mediaBox.createMedia('video');
+        const mediaBoxx = mediaBox.createMedia('video');
         img.innerHTML = mediaBoxx.videoLightbox;
       }
     }
@@ -76,22 +76,22 @@ function prevNext(i, tab) {
     img.innerHTML = '';
     if (i == tab.length - 1) {
       i = 0;
-      let mediaBox = new MediaFactory(tab[i]);
+      const mediaBox = new MediaFactory(tab[i]);
       if (tab[i].image !== undefined) {
-        let mediaBoxx = mediaBox.createMedia('image');
+        const mediaBoxx = mediaBox.createMedia('image');
         img.innerHTML = mediaBoxx.pictureLightbox;
       } else if (tab[i].video !== undefined) {
-        let mediaBoxx = mediaBox.createMedia('video');
+        const mediaBoxx = mediaBox.createMedia('video');
         img.innerHTML = mediaBoxx.videoLightbox;
       }
     } else {
-      i = i + 1;
-      let mediaBox = new MediaFactory(tab[i]);
+      i += 1;
+      const mediaBox = new MediaFactory(tab[i]);
       if (tab[i].image !== undefined) {
-        let mediaBoxx = mediaBox.createMedia('image');
+        const mediaBoxx = mediaBox.createMedia('image');
         img.innerHTML = mediaBoxx.pictureLightbox;
       } else if (tab[i].video !== undefined) {
-        let mediaBoxx = mediaBox.createMedia('video');
+        const mediaBoxx = mediaBox.createMedia('video');
         img.innerHTML = mediaBoxx.videoLightbox;
       }
     }
@@ -101,22 +101,22 @@ function prevNext(i, tab) {
       img.innerHTML = '';
       if (i == 0) {
         i = tab.length - 1;
-        let mediaBox = new MediaFactory(tab[i]);
+        const mediaBox = new MediaFactory(tab[i]);
         if (tab[i].image !== undefined) {
-          let mediaBoxx = mediaBox.createMedia('image');
+          const mediaBoxx = mediaBox.createMedia('image');
           img.innerHTML = mediaBoxx.pictureLightbox;
         } else if (tab[i].video !== undefined) {
-          let mediaBoxx = mediaBox.createMedia('video');
+          const mediaBoxx = mediaBox.createMedia('video');
           img.innerHTML = mediaBoxx.videoLightbox;
         }
       } else {
-        i = i - 1;
-        let mediaBox = new MediaFactory(tab[i]);
+        i -= 1;
+        const mediaBox = new MediaFactory(tab[i]);
         if (tab[i].image !== undefined) {
-          let mediaBoxx = mediaBox.createMedia('image');
+          const mediaBoxx = mediaBox.createMedia('image');
           img.innerHTML = mediaBoxx.pictureLightbox;
         } else if (tab[i].video !== undefined) {
-          let mediaBoxx = mediaBox.createMedia('video');
+          const mediaBoxx = mediaBox.createMedia('video');
           img.innerHTML = mediaBoxx.videoLightbox;
         }
       }
@@ -125,7 +125,7 @@ function prevNext(i, tab) {
   prevNextKey(i, tab);
 }
 
-//prev next juste avec les fleches du clavier
+// prev next juste avec les fleches du clavier
 function prevNextKey(i, tab) {
   const keyss = {
     tab: 9,
@@ -134,28 +134,28 @@ function prevNextKey(i, tab) {
     right: 39,
     left: 37,
   };
-  let img = document.querySelector('.modalThumb-img');
+  const img = document.querySelector('.modalThumb-img');
   window.addEventListener('keydown', (event) => {
     if (event.which === keyss.right) {
       img.innerHTML = '';
       if (i == tab.length - 1) {
         i = 0;
-        let mediaBox = new MediaFactory(tab[i]);
+        const mediaBox = new MediaFactory(tab[i]);
         if (tab[i].image !== undefined) {
-          let mediaBoxx = mediaBox.createMedia('image');
+          const mediaBoxx = mediaBox.createMedia('image');
           img.innerHTML = mediaBoxx.pictureLightbox;
         } else if (tab[i].video !== undefined) {
-          let mediaBoxx = mediaBox.createMedia('video');
+          const mediaBoxx = mediaBox.createMedia('video');
           img.innerHTML = mediaBoxx.videoLightbox;
         }
       } else {
-        i = i + 1;
-        let mediaBox = new MediaFactory(tab[i]);
+        i += 1;
+        const mediaBox = new MediaFactory(tab[i]);
         if (tab[i].image !== undefined) {
-          let mediaBoxx = mediaBox.createMedia('image');
+          const mediaBoxx = mediaBox.createMedia('image');
           img.innerHTML = mediaBoxx.pictureLightbox;
         } else if (tab[i].video !== undefined) {
-          let mediaBoxx = mediaBox.createMedia('video');
+          const mediaBoxx = mediaBox.createMedia('video');
           img.innerHTML = mediaBoxx.videoLightbox;
         }
       }
@@ -166,22 +166,22 @@ function prevNextKey(i, tab) {
       img.innerHTML = '';
       if (i == 0) {
         i = tab.length - 1;
-        let mediaBox = new MediaFactory(tab[i]);
+        const mediaBox = new MediaFactory(tab[i]);
         if (tab[i].image !== undefined) {
-          let mediaBoxx = mediaBox.createMedia('image');
+          const mediaBoxx = mediaBox.createMedia('image');
           img.innerHTML = mediaBoxx.pictureLightbox;
         } else if (tab[i].video !== undefined) {
-          let mediaBoxx = mediaBox.createMedia('video');
+          const mediaBoxx = mediaBox.createMedia('video');
           img.innerHTML = mediaBoxx.videoLightbox;
         }
       } else {
-        i = i - 1;
-        let mediaBox = new MediaFactory(tab[i]);
+        i -= 1;
+        const mediaBox = new MediaFactory(tab[i]);
         if (tab[i].image !== undefined) {
-          let mediaBoxx = mediaBox.createMedia('image');
+          const mediaBoxx = mediaBox.createMedia('image');
           img.innerHTML = mediaBoxx.pictureLightbox;
         } else if (tab[i].video !== undefined) {
-          let mediaBoxx = mediaBox.createMedia('video');
+          const mediaBoxx = mediaBox.createMedia('video');
           img.innerHTML = mediaBoxx.videoLightbox;
         }
       }
@@ -189,7 +189,7 @@ function prevNextKey(i, tab) {
   });
 }
 
-//gestion focus
+// gestion focus
 function Modal() {
   const triggerss = document.getElementsByClassName('img');
   const modal = document.querySelector('.modalThum');

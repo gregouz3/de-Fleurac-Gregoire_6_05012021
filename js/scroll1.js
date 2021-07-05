@@ -1,6 +1,6 @@
 const mybutton = document.getElementById('upBtn');
 document.body.onscroll = function () {
-  //show or hide btn with scroll
+  // show or hide btn with scroll
   scrollFunction();
 };
 
@@ -24,10 +24,10 @@ function goTop() {
 }
 
 function mainFunction() {
-  //scrool en dessous de la banniere
-  let headH = parseInt(document.querySelector('.header').clientHeight) + 80;
-  let banH = parseInt(document.querySelector('.list-ban').clientHeight);
-  let Ht = banH + headH;
+  // scrool en dessous de la banniere
+  const headH = parseInt(document.querySelector('.header').clientHeight) + 80;
+  const banH = parseInt(document.querySelector('.list-ban').clientHeight);
+  const Ht = banH + headH;
   document.body.scrollTop = Ht; // For Safari
   document.documentElement.scrollTop = Ht; // For Chrome,
   const foc1 = document.querySelector('#dropMenu');

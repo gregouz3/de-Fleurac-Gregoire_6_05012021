@@ -12,8 +12,7 @@ const keyCodes = {
   escape: 27,
 };
 const open = function (dialog) {
-  document.querySelector('.content__name').textContent =
-    document.getElementById('name').textContent;
+  document.querySelector('.content__name').textContent = document.getElementById('name').textContent;
   const focusableElements = dialog.querySelectorAll(focusableElementsArray);
   const firstFocusableElement = focusableElements[0];
   const lastFocusableElement = focusableElements[focusableElements.length - 1];
@@ -51,7 +50,7 @@ const open = function (dialog) {
   }, 100);
 };
 
-//ouverture de la modol avec "enter"
+// ouverture de la modol avec "enter"
 window.setTimeout(() => {
   document
     .querySelector('.list-ban__modal')
@@ -88,7 +87,7 @@ triggers.forEach((trigger) => {
 
   dismissTriggers.forEach((dismissTrigger) => {
     const dismissDialog = document.getElementById(
-      dismissTrigger.dataset.dismiss
+      dismissTrigger.dataset.dismiss,
     );
 
     dismissTrigger.addEventListener('click', (event) => {
@@ -116,7 +115,7 @@ function send() {
     console.log(User);
     const pro = document.getElementById('name').textContent;
     alert(
-      'Merci ' + User.prenom + ', ' + pro + ' a bien re\u00e7u votre message.'
+      `Merci ${User.prenom}, ${pro} a bien re\u00e7u votre message.`,
     );
     window.location.reload();
   } else {
@@ -125,7 +124,6 @@ function send() {
 }
 // f test address mail input with REGEX.
 function checkEmail(email) {
-  var re =
-    /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return re.test(email);
 }

@@ -10,9 +10,10 @@ export default class Image {
     this.price = data.price;
     this.alt = data.alt;
   }
+
   get pictureCard() {
-    if (localStorage.getItem('media_' + this.id)) {
-      let toff = JSON.parse(localStorage.getItem('media_' + this.id));
+    if (localStorage.getItem(`media_${this.id}`)) {
+      const toff = JSON.parse(localStorage.getItem(`media_${this.id}`));
       this.likes = toff.likes;
     }
     return `
@@ -41,6 +42,7 @@ export default class Image {
         </li>
         `;
   }
+
   get pictureLightbox() {
     return `
     <div>

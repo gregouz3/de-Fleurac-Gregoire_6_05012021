@@ -9,6 +9,7 @@ export default class Photographer {
     this.price = data.price;
     this.portrait = data.portrait;
   }
+
   get photographerCard() {
     return `
     <li class="block-list" >
@@ -37,6 +38,7 @@ export default class Photographer {
       </div>
     </li>`;
   }
+
   get photographerBanner() {
     const likesTT = JSON.parse(localStorage.getItem('likesPhotograph'));
     return `
