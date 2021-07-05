@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -20,11 +20,18 @@
 
   <body id="body">
     <!-- buttons scrolls-->
-    <button class="upBtn" id="upBtn" type="button" onclick="mainFunction()">
+    <button
+      class="upBtn"
+      aria-label="Passer au contenu"
+      id="upBtn"
+      type="button"
+      onclick="mainFunction()"
+    >
       Passer au contenu
     </button>
     <a
       id="button"
+      type="button"
       onclick="goTop()"
       aria-label="Revenir en  haut de la page"
     ></a>
@@ -137,6 +144,7 @@
                 data-dismiss="dialog"
                 type="button"
                 onclick="send()"
+                aria-label="Envoyer"
               >
                 Envoyer
               </button>
@@ -157,15 +165,14 @@
           <span
             id="close"
             class="close"
-            aria-label="Fermer"
-            title="Fermer cette fenêtre modale"
+            title="Close dialog"
             tabindex="0"
             data-dismiss="modalThum"
             role="button"
           ></span>
           <div class="modalThumb-img" id="lightBox"></div>
-          <span class="prev" tabindex="0">&#10094;</span>
-          <span class="next" tabindex="0">&#10095;</span>
+          <span title="Previous image" class="prev" tabindex="0">&#10094;</span>
+          <span title="Next image" class="next" tabindex="0">&#10095;</span>
         </div>
       </div>
       <!--footer likes total  and price du photographe-->

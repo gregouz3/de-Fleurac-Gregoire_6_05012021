@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FishEy</title>
+    <title>FishEye</title>
     <link rel="icon" href="./ressources/icons/favicon.png" />
     <link rel="stylesheet" type="text/css" href="./css/style.css" />
     <link
@@ -22,12 +22,25 @@
   </head>
   <body>
     <!-- buttons scrolls-->
-    <button class="upBtn" id="upBtn" type="button" onclick="mainFunction()">
+
+    <button
+      class="upBtn"
+      aria-label="Passer au contenu"
+      id="upBtn"
+      tabindex="0"
+      onclick="mainFunction()"
+    >
       Passer au contenu
     </button>
-    <button id="button" type="button" onclick="goTop()"></button>
+    <a
+      id="button"
+      type="button"
+      onclick="goTop()"
+      role="button"
+      aria-label="Revenir en  haut de la page"
+    ></a>
     <header role="banner" class="header">
-      <a href="./index.html">
+      <a href="./index.html" tabindex="0">
         <img src="./ressources/icons/logo.png" alt="Fisheye Home page" />
       </a>
       <nav role="navigation" aria-label="photographers catégories">
@@ -94,5 +107,6 @@
     </main>
     <script src="./js/index.js" type="module"></script>
     <script src="./js/scroll.js"></script>
+    <script src="./js/focusIndex.js"></script>
   </body>
 </html>

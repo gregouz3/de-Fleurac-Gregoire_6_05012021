@@ -1,7 +1,6 @@
 const mybutton = document.getElementById('upBtn');
 document.body.onscroll = function () {
   //show or hide btn with scroll
-
   scrollFunction();
 };
 
@@ -31,4 +30,6 @@ function mainFunction() {
   let Ht = banH + headH;
   document.body.scrollTop = Ht; // For Safari
   document.documentElement.scrollTop = Ht; // For Chrome,
+  const foc1 = document.querySelector('#dropMenu');
+  foc1.focus();
 }

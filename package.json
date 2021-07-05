@@ -5,14 +5,31 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "sass": "sass --watch ./scss/main.scss:./css/style.css"
+    "sass": "sass --watch ./scss/main.scss:./css/style.css --style compressed",
+    "prefix": "postcss ./css/style.css --use autoprefixer -d ./css/prefixed/ "
   },
+  "browserslist": "last 4 versions",
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "browserslist": "^4.16.6",
+    "caniuse-lite": "^1.0.30001242",
     "parvus": "^1.4.0"
   },
   "devDependencies": {
-    "eslint": "^7.29.0"
+    "eslint": "^7.29.0",
+    "husky": "^7.0.0",
+    "lint-staged": "^11.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*": [
+      "prettier --write",
+      "git add"
+    ]
   }
 }

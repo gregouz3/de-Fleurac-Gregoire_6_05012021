@@ -27,4 +27,6 @@ function mainFunction() {
   console.log(headH);
   document.body.scrollTop = headH; // For Safari
   document.documentElement.scrollTop = headH; // For Chrome,
+  const foc = document.getElementsByClassName('block-list');
+  foc[0].childNodes[1].focus();
 }

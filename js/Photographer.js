@@ -12,8 +12,8 @@ export default class Photographer {
 
   get photographerCard() {
     return `
-    <li class="block-list">
-      <a class="block-list__link" href="pro.html?id=${this.id}" aria-label="Consulter la page de ${this.name} originaire de  ${this.city}, ${this.country}  ${this.tagline} ${this.price} de taux jouralier moyen" >
+    <li class="block-list" >
+      <a tabindex="0" class="block-list__link" href="pro.html?id=${this.id}" aria-label="Consulter la page de ${this.name} originaire de  ${this.city}, ${this.country}  ${this.tagline} ${this.price} de taux jouralier moyen" title="Consulter la page de ${this.name}" >
       <div class="block-list__link__portrait">
         <img 
           width="200"
@@ -39,12 +39,13 @@ export default class Photographer {
     </li>`;
   }
   get photographerBanner() {
+    const likesTT = JSON.parse(localStorage.getItem('likesPhotograph'));
     return `
     <section class="list-ban">
-      <div class="list-ban-info" tabindex="0" aria-label="Vous consulter la page de ${this.name} originaire de  ${this.city}, ${this.country}  ${this.tagline} ${this.price} de taux jouralier moyen">
-        <h2 class="list-ban-info__name" role="heading">
+      <div class="list-ban-info" tabindex="0" aria-label="Vous consulter la page de ${this.name} originaire de  ${this.city}, ${this.country}  ${this.tagline} ${this.price} de taux jouralier moyen.Ces réalisations comptent ${likesTT} likes au total">
+        <h2 class="list-ban-info__name" >
         <span id="name">${this.name}</span>
-        </h1>
+        </h2>
         <p class="list-ban-info__location" role="text">
           ${this.city}, ${this.country}
         </p>

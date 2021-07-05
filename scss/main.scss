@@ -1,5 +1,6 @@
 $primary: #901c1c;
 $secondly: #d3573c;
+
 @mixin mobile-only {
   @media screen and (max-width: 599px) {
     @content;
@@ -136,7 +137,6 @@ body::-webkit-scrollbar {
   visibility: hidden;
   outline: none;
   border: none;
-  z-index: 1000;
 }
 #button::after {
   content: '\f077';
@@ -175,11 +175,9 @@ body::-webkit-scrollbar {
   border-radius: 5px;
   border: 0;
   position: absolute;
-  outline: none;
   position: fixed;
   top: 3px;
   left: 42vw;
-  z-index: 99; /* Make sure it does not overlap */
   @include mobile-only {
     width: 40vw;
     font-size: 0.7rem;
@@ -244,7 +242,7 @@ h1 {
       }
       &--prix {
         font-size: 0.9rem;
-        color: #909090;
+        color: #757575;
       }
     }
     &__tag {
@@ -563,6 +561,7 @@ h1 {
 }
 .head {
   display: flex;
+  justify-content: space-between;
 }
 // hidden dialog
 .c-dialog[aria-hidden='true'] {
@@ -848,6 +847,9 @@ h1 {
 #dropMenu {
   margin-left: 2rem;
   font-size: 0.9rem;
+  &:focus {
+    border: 1px solid black;
+  }
 }
 
 .custom-option {
@@ -1043,7 +1045,9 @@ select {
   appearance: none;
   outline: 0;
   box-shadow: none;
-  border: 0 !important;
+  &:focus {
+    font-weight: bold;
+  }
 }
 /* Remove IE arrow */
 select::-ms-expand {

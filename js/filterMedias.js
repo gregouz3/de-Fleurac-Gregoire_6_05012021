@@ -170,9 +170,7 @@ function displayWithSort(media) {
             );
             likeTotal++;
             //refresh trie si un media depasse en popularité un autre media pour la cohérence du trie
-            if (
-              document.getElementById('dropMenu').textContent == 'popularité'
-            ) {
+            if (document.querySelector('#dropMenu').value == 'popularite') {
               if (tab[i - 1] !== undefined && tab[i].likes > tab[i - 1].likes) {
                 trie();
               }
