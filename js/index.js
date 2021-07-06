@@ -1,7 +1,8 @@
 import Photographer from './Photographer.js';
 
 export default async function getPhotographers() {
-  const url = 'https://gregouz3.github.io/de-Fleurac-Gregoire_6_05012021/photographers.json';
+  const url =
+    'https://gregouz3.github.io/de-Fleurac-Gregoire_6_05012021/photographers.json';
   return await fetch(url).then((response) => response.json());
 }
 

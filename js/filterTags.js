@@ -12,6 +12,7 @@ async function displayCardsPhotographersTag() {
       const photograph = new Photographer(photographer);
       card.innerHTML += photograph.photographerCard;
       const { id } = photograph;
+      // eslint-disable-next-line no-restricted-syntax
       for (const tagz of photograph.tags) {
         const tagid = document.getElementById(`tags${id}`);
         const tagg = document.createElement('a');

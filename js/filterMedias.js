@@ -7,6 +7,44 @@ async function getMedias() {
   return await fetch(url).then((response) => response.json());
 }
 
+function triee() {
+  const id_pro = location.search.substring(4);
+  // on utlise le localstorage pour la maj des likes
+  const media = JSON.parse(localStorage.getItem(`tof_pro_${id_pro}`));
+  const btn = document.getElementById('dropMenu');
+  const sb = document.querySelector('#dropMenu');
+  media.sort((a, b) => (a.likes > b.likes ? -1 : b.likes > a.likes ? 1 : 0));
+  displayWithSort(media);
+  btn.addEventListener('click', (e) => {
+    // fleche du menu déroulant
+    document.querySelector('.arrow').classList.toggle('open');
+
+    e.preventDefault();
+    const selectedValues = [].filter
+      .call(sb.options, (option) => option.selected)
+      .map((option) => option.text);
+    console.log(selectedValues[0]);
+    if (selectedValues[0] == 'Popularité') {
+      media.sort((a, b) =>
+        a.likes > b.likes ? -1 : b.likes > a.likes ? 1 : 0
+      );
+      displayWithSort(media);
+    }
+    if (selectedValues[0] == 'Date') {
+      media.sort((a, b) => (a.date > b.date ? -1 : b.date > a.date ? 1 : 0));
+      displayWithSort(media);
+    }
+    if (selectedValues[0] == 'Titre') {
+      media.sort((a, b) => {
+        if ((a.title || a.title) < (b.title || b.title)) return -1;
+        if ((a.title || a.title) > (b.title || b.title)) return 1;
+        return 0;
+      });
+      displayWithSort(media);
+    }
+  });
+}
+
 async function trie() {
   // init tab  qui contiendra les réalisations du photographe avec les likes à jour grâce au localstorage
   const tab = [];
@@ -55,45 +93,6 @@ async function trie() {
     JSON.stringify(tab)
   );
   triee();
-}
-
-function triee() {
-  const id_pro = location.search.substring(4);
-  // on utlise le localstorage pour la maj des likes
-  const media = JSON.parse(localStorage.getItem(`tof_pro_${id_pro}`));
-  const btn = document.getElementById('dropMenu');
-  const sb = document.querySelector('#dropMenu');
-  console.log(sb.options);
-  media.sort((a, b) => (a.likes > b.likes ? -1 : b.likes > a.likes ? 1 : 0));
-  displayWithSort(media);
-  btn.addEventListener('click', (e) => {
-    // fleche du menu déroulant
-    document.querySelector('.arrow').classList.toggle('open');
-
-    e.preventDefault();
-    const selectedValues = [].filter
-      .call(sb.options, (option) => option.selected)
-      .map((option) => option.text);
-    console.log(selectedValues[0]);
-    if (selectedValues[0] == 'Popularité') {
-      media.sort((a, b) =>
-        a.likes > b.likes ? -1 : b.likes > a.likes ? 1 : 0
-      );
-      displayWithSort(media);
-    }
-    if (selectedValues[0] == 'Date') {
-      media.sort((a, b) => (a.date > b.date ? -1 : b.date > a.date ? 1 : 0));
-      displayWithSort(media);
-    }
-    if (selectedValues[0] == 'Titre') {
-      media.sort((a, b) => {
-        if ((a.title || a.title) < (b.title || b.title)) return -1;
-        if ((a.title || a.title) > (b.title || b.title)) return 1;
-        return 0;
-      });
-      displayWithSort(media);
-    }
-  });
 }
 
 function displayWithSort(media) {
